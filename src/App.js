@@ -1,7 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
+import { getCats } from './APIcalls';
+import { useEffect } from 'react';
+
 
 function App() {
+
+  useEffect(() => {
+    getCats()
+  },[])
+
   return (
     <div className="App">
       <header className="App-header">
