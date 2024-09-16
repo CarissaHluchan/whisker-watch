@@ -7,7 +7,7 @@ function AllCatBreeds() {
     }
 
     return (
-        <div></div>
+        <main></main>
     )
 }
 

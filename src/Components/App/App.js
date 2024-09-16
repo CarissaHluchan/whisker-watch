@@ -12,6 +12,7 @@ function App() {
 
   useEffect(() => {
     getCats()
+      .then(catBreedData => console.log(catBreedData, 'catBreedData from app'))
   }, [])
 
   return (
@@ -31,7 +32,15 @@ function App() {
       </Routes>
       <footer>
         <div>Created By: Carissa Hluchan</div>
-        {/* <Link></Link> */}
+        <div>
+          See it on:
+          <a
+            href="https://github.com/CarissaHluchan"
+            target="_blank"
+            rel="noopener noreferrer">
+            GitHub
+          </a>
+        </div>
       </footer>
     </>
   );

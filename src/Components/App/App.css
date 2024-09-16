@@ -27,12 +27,14 @@ h1 {
 }
 
 footer {
+    color: var(--third-color);
     background-color: var(--first-color);
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-content: center;
     justify-content: center;
     align-items: center;
     width: 110%;
+    padding: 20px;
     border: 2px solid var(--second-color);
 }
