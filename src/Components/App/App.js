@@ -1,7 +1,12 @@
 import './App.css';
-import whiskerLogo from '../../assets/Whisker-Watch.png'
-import menu from '../../assets/menu.png'
-import RareCatBreeds from '../RareCatBreeds/RareCatBreeds'
+import whiskerLogo from '../../assets/Whisker-Watch.png';
+import menu from '../../assets/menu.png';
+
+import Nav from '../Nav/Nav';
+import RareCatBreeds from '../RareCatBreeds/RareCatBreeds';
+import AllCatBreeds from '../AllCatBreeds/AllCatBreeds';
+import SingleCatBreed from '../SingleCatBreed/SingleCatBreed';
+import FavoriteCatBreeds from '../FavoriteCatBreeds/FavoriteCatBreeds';
 
 import { getCats } from '../../APIcalls';
 
@@ -13,12 +18,7 @@ function App() {
 
   const [rareCatBreeds, setRareCatBreeds] = useState([]);
   const [allCatBreeds, setAllCatBreeds] = useState([]);
-
-
-  /**
-   when a user clicks a card 
-   they will see the SingleCatBreed
-   */
+  const [isNavOpen, setIsNavOpen] = useState(false);
 
   useEffect(() => {
     getCats()
@@ -30,22 +30,28 @@ function App() {
       .catch(err => {
         console.error("Error fetching rare cat breeds from APP:", err);
         throw err
-      })
+      });
 
-      getCats()
+    getCats()
       .then(data => {
         setAllCatBreeds(data)
       })
       .catch(err => {
         console.error("Error fetching all cat breeds from APP:", err);
         throw err
-      })
-  }, [])
+      });
+  }, []);
+
+  const toggleNav = () => {
+    setIsNavOpen(!isNavOpen)
+  }
+
 
   return (
     <>
       <header>
-        <img src={menu} className='menu-png'/>
+        <img src={menu} className='menu-png' onClick={toggleNav} alt="Hamburger Menu" />
+        {isNavOpen && <Nav />}
         <h1>
           Whisker
           <img src={whiskerLogo} alt='Whisker Logo' className='whisker-logo' />
@@ -59,11 +65,15 @@ function App() {
         />
         <Route
           path='/allCatBreeds'
-          element={<allCatBreeds allCatBreeds={allCatBreeds} />}
+          element={<AllCatBreeds allCatBreeds={allCatBreeds} />}
         />
-        <Route 
+        <Route
           path='/catBreed/:id'
-          element={<singleCatBreed allCatBreeds={allCatBreeds} />}
+          element={<SingleCatBreed allCatBreeds={allCatBreeds} />}
+        />
+        <Route
+          path='/favoriteCatbreeds'
+          element={<FavoriteCatBreeds />}
         />
       </Routes>
       {/* <button className='see-all-cat-breed-button'>See all cat breeds</button> */}

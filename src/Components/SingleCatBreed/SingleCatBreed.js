@@ -1,4 +1,5 @@
 import './SingleCatBreed.css';
+import { useParams } from 'react-router-dom';
 
 function SingleCatBreed({ allCatBreeds }) {
 
