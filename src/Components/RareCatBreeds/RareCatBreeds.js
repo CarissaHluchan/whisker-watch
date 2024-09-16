@@ -17,7 +17,7 @@ function RareCatBreeds({ rareCatBreeds }) {
     })
 
     return (
-        <main>
+        <main className='rare-cat-breed-main'>
             {catBreedCards}
         </main>
     )

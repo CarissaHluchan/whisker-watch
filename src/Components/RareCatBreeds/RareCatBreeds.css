@@ -1,0 +1,6 @@
+.rare-cat-breed-main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}

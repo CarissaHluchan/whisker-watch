@@ -9,6 +9,7 @@
     background-color: var(--first-color);
     border: 1px solid var(--second-color);
     border-radius: 5px;
+    margin: 1rem;
 }
 
 .rare-cat-breed-img {
