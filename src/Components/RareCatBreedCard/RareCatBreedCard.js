@@ -1,12 +1,13 @@
 import './RareCatBreedCard.css';
+import { Link } from 'react-router-dom';
 
-function RareCatBreedCard({ id, key, name, image }) {
+function RareCatBreedCard({ id, name, image }) {
 
         return (
-            <div className='rare-cat-breed-card-wrapper' id={id} key={key}>
+            <Link to={`/catBreed/${id}`} className='rare-cat-breed-card-wrapper' id={id} >
                 <img src={image} alt={name} className='rare-cat-breed-img'/>
                 <h3 className='rare-cat-breed-name'>{name}</h3>
-            </div>
+            </Link>
         )
 }
 

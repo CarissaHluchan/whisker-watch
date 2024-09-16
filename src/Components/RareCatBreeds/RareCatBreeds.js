@@ -3,8 +3,6 @@ import RareCatBreedCard from '../RareCatBreedCard/RareCatBreedCard';
 
 function RareCatBreeds({ rareCatBreeds }) {
 
-    console.log(rareCatBreeds)
-
     const catBreedCards = rareCatBreeds.map(rareCatBreed => {
         return (
             <RareCatBreedCard

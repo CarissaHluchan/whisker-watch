@@ -1,16 +1,24 @@
 import './App.css';
 import whiskerLogo from '../../assets/Whisker-Watch.png'
+import menu from '../../assets/menu.png'
 import RareCatBreeds from '../RareCatBreeds/RareCatBreeds'
 
 import { getCats } from '../../APIcalls';
 
 import { Routes, Route, Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useParams } from 'react';
 
 
 function App() {
 
-  const [ rareCatBreeds, setRareCatBreeds ] = useState([]);
+  const [rareCatBreeds, setRareCatBreeds] = useState([]);
+  const [allCatBreeds, setAllCatBreeds] = useState([]);
+
+
+  /**
+   when a user clicks a card 
+   they will see the SingleCatBreed
+   */
 
   useEffect(() => {
     getCats()
@@ -20,7 +28,16 @@ function App() {
         setRareCatBreeds(rareBreeds)
       })
       .catch(err => {
-        console.error("Error fetching cat breeds from APP:", err);
+        console.error("Error fetching rare cat breeds from APP:", err);
+        throw err
+      })
+
+      getCats()
+      .then(data => {
+        setAllCatBreeds(data)
+      })
+      .catch(err => {
+        console.error("Error fetching all cat breeds from APP:", err);
         throw err
       })
   }, [])
@@ -28,6 +45,7 @@ function App() {
   return (
     <>
       <header>
+        <img src={menu} className='menu-png'/>
         <h1>
           Whisker
           <img src={whiskerLogo} alt='Whisker Logo' className='whisker-logo' />
@@ -37,9 +55,18 @@ function App() {
       <Routes>
         <Route
           path='/'
-          element={<RareCatBreeds rareCatBreeds={rareCatBreeds}/>}
+          element={<RareCatBreeds rareCatBreeds={rareCatBreeds} />}
+        />
+        <Route
+          path='/allCatBreeds'
+          element={<allCatBreeds allCatBreeds={allCatBreeds} />}
+        />
+        <Route 
+          path='/catBreed/:id'
+          element={<singleCatBreed allCatBreeds={allCatBreeds} />}
         />
       </Routes>
+      {/* <button className='see-all-cat-breed-button'>See all cat breeds</button> */}
       <footer>
         <div>Created By: Carissa Hluchan</div>
         <div>
