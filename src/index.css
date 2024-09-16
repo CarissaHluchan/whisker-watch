@@ -4,10 +4,32 @@
   --third-color: #401E1B;
   --fourth-color: #BFAE9F;
   --fith-color: #0E2759;
-}
 
+  --logo-font: "Ribeye Marrow", serif;
+  --body-font: "Montserrat", sans-serif;
+
+  --title-weight: 700;
+  --body-weight: 500;
+}
 
 body {
 background-color: var(--fourth-color);
 margin: 0;
+font-family: var(--body-font);
+font-optical-sizing: auto;
+font-weight: var(--body-weight);
+font-style: normal;
 }
+
+/* .montserrat-body {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.ribeye-marrow-regular {
+  font-family: "Ribeye Marrow", serif;
+  font-weight: 400;
+  font-style: normal;
+} */

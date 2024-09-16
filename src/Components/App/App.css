@@ -5,23 +5,23 @@ header {
     align-content: center;
     justify-content: center;
     align-items: center;
-    width: 110%;
     border: 2px solid var(--second-color);
-    margin-top: 20px;
-    margin-left: 0;
-    margin-right: 0;
+    margin-top: 1.6rem;
 }
 
 h1 {
     color: var(--third-color);
+    font-family: var(--logo-font);
+    font-weight: var(--title-weight);
+    font-style: normal;
+    font-size: 2.5rem;
     /* border: 1px solid black; */
 }
 
 .whisker-logo {
     position: relative;
-    top: 10px;
     width: 150px;
-    margin-left: 10px;
+    margin-left: 5px;
     margin-right: 5px;
     /* border: 1px solid black; */
 }
@@ -34,7 +34,6 @@ footer {
     align-content: center;
     justify-content: center;
     align-items: center;
-    width: 110%;
-    padding: 20px;
+    padding: 1.6rem;
     border: 2px solid var(--second-color);
 }

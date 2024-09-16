@@ -1,5 +1,5 @@
 import './App.css';
-import whiskerLogo from '../../assets/whiskers.png'
+import whiskerLogo from '../../assets/Whisker-Watch.png'
 import AllCatBreeds from '../AllCatBreeds/AllCatBreeds'
 
 import { getCats } from '../../APIcalls';
