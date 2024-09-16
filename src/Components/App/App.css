@@ -1,0 +1,38 @@
+header {
+    background-color: var(--first-color);
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    width: 110%;
+    border: 2px solid var(--second-color);
+    margin-top: 20px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+h1 {
+    color: var(--third-color);
+    /* border: 1px solid black; */
+}
+
+.whisker-logo {
+    position: relative;
+    top: 10px;
+    width: 150px;
+    margin-left: 10px;
+    margin-right: 5px;
+    /* border: 1px solid black; */
+}
+
+footer {
+    background-color: var(--first-color);
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    width: 110%;
+    border: 2px solid var(--second-color);
+}
