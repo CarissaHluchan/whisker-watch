@@ -1,0 +1,24 @@
+.rare-cat-breed-card-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: flex-end;
+    align-items: center;
+    width: 20rem;
+    height: 15rem;
+    background-color: var(--first-color);
+    border: 1px solid var(--second-color);
+    border-radius: 5px;
+}
+
+.rare-cat-breed-img {
+    position: relative;
+    top: .5rem;
+    height: 10rem;
+    width: auto;
+    border: 1px solid var(--second-color);
+}
+
+.rare-cat-breed-name {
+    color: var(--third-color);
+}

@@ -1,18 +1,28 @@
 import './App.css';
 import whiskerLogo from '../../assets/Whisker-Watch.png'
-import AllCatBreeds from '../AllCatBreeds/AllCatBreeds'
+import RareCatBreeds from '../RareCatBreeds/RareCatBreeds'
 
 import { getCats } from '../../APIcalls';
 
 import { Routes, Route, Link } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 
 function App() {
 
+  const [ rareCatBreeds, setRareCatBreeds ] = useState([]);
+
   useEffect(() => {
     getCats()
-      .then(catBreedData => console.log(catBreedData, 'catBreedData from app'))
+      .then(data => {
+        const rareBreeds = data.filter(breed => breed.rare === 1 || (breed.description && breed.description.toLowerCase().includes('rare')))
+        console.log(rareCatBreeds, 'rare cat breed Data from app')
+        setRareCatBreeds(rareBreeds)
+      })
+      .catch(err => {
+        console.error("Error fetching cat breeds from APP:", err);
+        throw err
+      })
   }, [])
 
   return (
@@ -27,7 +37,7 @@ function App() {
       <Routes>
         <Route
           path='/'
-          element={<AllCatBreeds />}
+          element={<RareCatBreeds rareCatBreeds={rareCatBreeds}/>}
         />
       </Routes>
       <footer>
