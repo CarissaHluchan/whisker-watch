@@ -7,16 +7,16 @@ function SingleCatBreed({ allCatBreeds }) {
     const catBreed = allCatBreeds.find(catBreed => catBreed.id === id);
     const navigate = useNavigate();
 
-    function handleAddToFavorites() {
+    const handleAddToFavorites = () => {
         addToFavorites(catBreed);
         alert(`${catBreed.name} has been added to your favorites!`);
     };
 
-    function handleBackToRareBreeds() {
+    const handleBackToRareBreeds = () => {
         navigate('/')
     }
 
-    function handleViewFavorites() {
+    const handleViewFavorites = () => {
         navigate('/favoriteCatbreeds')
     }
 
