@@ -18,6 +18,7 @@ function App() {
 
   const [rareCatBreeds, setRareCatBreeds] = useState([]);
   const [allCatBreeds, setAllCatBreeds] = useState([]);
+  const [favoriteCatbreeds, setFavoriteCatbreeds] = useState([]);
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   useEffect(() => {
@@ -42,10 +43,15 @@ function App() {
       });
   }, []);
 
+  const addToFavoriteCatBreeds = (newFavoriteCatBreed) => {
+    setFavoriteCatbreeds(prevFavorites => {
+      return [...prevFavorites, newFavoriteCatBreed]
+    })
+  }
+
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen)
   }
-
 
   return (
     <>
@@ -62,15 +68,21 @@ function App() {
       <Routes>
         <Route
           path='/'
-          element={<RareCatBreeds rareCatBreeds={rareCatBreeds} />}
+          element={<RareCatBreeds
+            rareCatBreeds={rareCatBreeds}
+          />}
         />
         <Route
           path='/allCatBreeds'
-          element={<AllCatBreeds allCatBreeds={allCatBreeds} />}
+          element={<AllCatBreeds
+            allCatBreeds={allCatBreeds}
+          />}
         />
         <Route
           path='/catBreed/:id'
-          element={<SingleCatBreed allCatBreeds={allCatBreeds} />}
+          element={<SingleCatBreed 
+            allCatBreeds={allCatBreeds} 
+            addToFavoriteCatBreeds={addToFavoriteCatBreeds} />}
         />
         <Route
           path='/favoriteCatbreeds'

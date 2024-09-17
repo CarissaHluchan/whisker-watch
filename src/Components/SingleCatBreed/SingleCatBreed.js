@@ -1,14 +1,14 @@
 import './SingleCatBreed.css';
 import { useParams, useNavigate } from 'react-router-dom';
 
-function SingleCatBreed({ allCatBreeds }) {
+function SingleCatBreed({ allCatBreeds, addToFavoriteCatBreeds }) {
 
     const { id } = useParams();
     const catBreed = allCatBreeds.find(catBreed => catBreed.id === id);
     const navigate = useNavigate();
 
     const handleAddToFavorites = () => {
-        addToFavorites(catBreed);
+        addToFavoriteCatBreeds(catBreed); 
         alert(`${catBreed.name} has been added to your favorites!`);
     };
 
