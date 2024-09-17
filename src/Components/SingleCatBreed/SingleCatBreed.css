@@ -1,19 +1,12 @@
-.sinlge-cat-section {
+.single-breed-button-wrapper {
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-.single-cat-all-wrapper {
-    width: 95%;
-    font-weight: 500;
-    color: var(--third-color);
-    background-color: var(--first-color);
-    border: 1px solid var(--third-color);
-    margin-top: 1rem;
-}
-
-.add-to-favorites-button {
+button {
     background-color: var(--second-color);
     color: white;
     font-family: var(--body-font);
@@ -29,19 +22,55 @@
     transition: transform 0.3s ease-in-out
 }
 
-.add-to-favorites-button:hover {
+button:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
     cursor: pointer;
     transform: scale(1.1);
 }
 
-.sc-breed-name {
+.sinlge-cat-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.single-cat-all-wrapper {
+    width: 95%;
+    font-weight: 500;
+    color: var(--third-color);
+    background-color: var(--first-color);
+    border: 1px solid var(--third-color);
+    margin-top: 1rem;
+}
+
+.add-to-favorites-button-wrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.add-to-favorites-button {
+    background-color: var(--fourth-color);
+    color: var(--fith-color);
+    font-family: var(--body-font);
+    font-optical-sizing: auto;
+    font-size: 1rem;
+    font-weight: var(--body-weight);
+    font-style: normal;
+    padding: .5rem;
+    border-style: double;
+    border-color: var(--fith-color);
+    border-radius: 5px;
+    margin: 1rem;
+    transition: transform 0.3s ease-in-out
+}
+
+.single-cat-breed-name {
     font-size: 2rem;
     /* color: var(--third-color); */
     margin-left: 1rem;
 }
 
-.sc-breed-image {
+.single-cat-breed-image {
     height: 14rem;
     border: 1px solid var(--third-color);
     margin-left: 1rem;
@@ -53,7 +82,7 @@
     align-items: flex-start;
 }
 
-.sc-content-title {
+.single-cat-content-title {
     color: var(--fith-color);
     font-size: 1.5rem;
     font-weight: 700;
@@ -61,14 +90,14 @@
     margin-bottom: .5rem;
 }
 
-.sc-content {
+.single-cat-content {
     font-size: 1.2rem;
     margin-left: 2rem;
     margin-right: 1rem;
     margin-bottom: 2rem;
 }
 
-.sc-content-weight {
+.single-cat-content-weight {
     font-size: 1.2rem;
     margin-left: 2rem;
     margin-right: 1rem;
@@ -83,21 +112,21 @@
 }
 
 /*---------------------// Rated Trait //---------------------*/
-.sc-rated-trait-content {
+.single-cat-trait-content {
     font-size: 1.2rem;
     margin-left: 2rem;
     margin-right: 1rem;
     margin-bottom: .5rem;
 }
 
-.all-rated-traites-wrapper {
+.all-traites-wrapper {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
 }
 
-.rated-traites-wrapper {
+.traites-wrapper {
     display: flex;
     flex-direction: column;
 }
@@ -107,7 +136,7 @@
     flex-direction: row;
     align-items: flex-start;
 }
-.rated-trait-content-title {
+.trait-content-title {
     color: var(--fith-color);
     font-size: 1.3rem;
     font-weight: 700;
@@ -115,8 +144,33 @@
     margin-bottom: .5rem;
 }
 
-.rated-trait-content {
+.trait-content {
     font-size: 1.3rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.other-traits-content-title {
+    color: var(--fith-color);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-left: 1rem;
+    margin-bottom: .5rem;
+    margin-top: 2rem;
+}
+
+.url-links {
+    font-size: 1.2rem;
     margin-left: 2rem;
     margin-right: 0.3rem;
+}
+
+.url-links:hover {
+    color: var(--fith-color);
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.bottom {
+    margin-bottom: 2rem;
 }
