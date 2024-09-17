@@ -54,10 +54,11 @@ function App() {
         {isNavOpen && <Nav />}
         <h1>
           Whisker
-          <img src={whiskerLogo} alt='Whisker Logo' className='whisker-logo' />
+          <img src={whiskerLogo} alt='Logo' className='whisker-logo' />
           Watch
         </h1>
       </header>
+
       <Routes>
         <Route
           path='/'
@@ -76,7 +77,7 @@ function App() {
           element={<FavoriteCatBreeds />}
         />
       </Routes>
-      {/* <button className='see-all-cat-breed-button'>See all cat breeds</button> */}
+
       <footer>
         <div>Created By: Carissa Hluchan</div>
         <div>
