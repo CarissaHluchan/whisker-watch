@@ -12,6 +12,10 @@ function SingleCatBreed({ allCatBreeds, addToFavoriteCatBreeds }) {
         alert(`${catBreed.name} has been added to your favorites!`);
     };
 
+    const handleViewAllBreeds = () => {
+        navigate('/allCatBreeds')
+    }
+
     const handleBackToRareBreeds = () => {
         navigate('/')
     }
@@ -25,7 +29,8 @@ function SingleCatBreed({ allCatBreeds, addToFavoriteCatBreeds }) {
     return (
         <section className='sinlge-cat-section'>
             <div className='single-breed-button-wrapper'>
-                <button onClick={handleBackToRareBreeds}>Back to Rare Breeds</button>
+                <button onClick={handleViewAllBreeds}>All Breeds</button>
+                <button onClick={handleBackToRareBreeds}>Rare Breeds</button>
                 <button onClick={handleViewFavorites}>My Favorite Breeds</button>
             </div>
             <div className='single-cat-all-wrapper'>
