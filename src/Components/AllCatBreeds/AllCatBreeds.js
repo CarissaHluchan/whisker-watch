@@ -1,4 +1,5 @@
 import '../RareCatBreeds/RareCatBreeds.css';
+import defaultCatImage from '../../assets/default-cat.png';
 import CatBreedCard from '../CatBreedCard/CatBreedCard';
 import { useNavigate } from 'react-router-dom';
 
@@ -10,16 +11,18 @@ function AllCatBreeds({ allCatBreeds }) {
         navigate('/favoriteCatbreeds')
     }
 
-    const catBreedCards = allCatBreeds.map(catBreed => {
-        return (
-            <CatBreedCard
-                id={catBreed.id}
-                key={catBreed.id}
-                name={catBreed.name}
-                image={catBreed.image && catBreed.image.url ? catBreed.image.url : 'default-image-url-here'}
-            />
-        )
-    })
+    const catBreedCards = allCatBreeds
+        .filter(catBreed => catBreed.image && catBreed.image.url)
+        .map(catBreed => {
+            return (
+                <CatBreedCard
+                    id={catBreed.id}
+                    key={catBreed.id}
+                    name={catBreed.name}
+                    image={catBreed.image && catBreed.image.url ? catBreed.image.url : defaultCatImage}
+                />
+            )
+        })
 
     return (
         <main className='rare-cat-breed-main'>
