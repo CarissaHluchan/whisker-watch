@@ -41,6 +41,7 @@ button:hover {
     background-color: var(--first-color);
     border: 1px solid var(--third-color);
     margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .add-to-favorites-button-wrapper {
@@ -66,8 +67,8 @@ button:hover {
 
 .single-cat-breed-name {
     font-size: 2rem;
-    /* color: var(--third-color); */
     margin-left: 1rem;
+    margin-top: 0;
 }
 
 .single-cat-breed-image {
@@ -80,6 +81,11 @@ button:hover {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.description-wrapper {
+    width: 54vw;
 }
 
 .single-cat-content-title {

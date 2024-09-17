@@ -1,21 +1,36 @@
 import './SingleCatBreed.css';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 function SingleCatBreed({ allCatBreeds }) {
 
     const { id } = useParams();
     const catBreed = allCatBreeds.find(catBreed => catBreed.id === id);
+    const navigate = useNavigate();
+
+    function handleAddToFavorites() {
+        addToFavorites(catBreed);
+        alert(`${catBreed.name} has been added to your favorites!`);
+    };
+
+    function handleBackToRareBreeds() {
+        navigate('/')
+    }
+
+    function handleViewFavorites() {
+        navigate('/favoriteCatbreeds')
+    }
+
     const convertTrait = (trait) => trait === 0 ? 'No' : 'Yes';
 
     return (
         <section className='sinlge-cat-section'>
             <div className='single-breed-button-wrapper'>
-                <button>Back to Rare Breeds</button>
-                <button>My Favorite Breeds</button>
+                <button onClick={handleBackToRareBreeds}>Back to Rare Breeds</button>
+                <button onClick={handleViewFavorites}>My Favorite Breeds</button>
             </div>
             <div className='single-cat-all-wrapper'>
                 <div className='add-to-favorites-button-wrapper'>
-                    <button className='add-to-favorites-button'>Add Breed to Favorites</button>
+                    <button className='add-to-favorites-button' onClick={handleAddToFavorites}>Add Breed to Favorites</button>
                 </div>
                 <h3 className='single-cat-breed-name'>{catBreed.name}</h3>
 
