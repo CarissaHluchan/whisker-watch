@@ -1,5 +1,5 @@
 import './RareCatBreeds.css';
-import RareCatBreedCard from '../RareCatBreedCard/RareCatBreedCard';
+import CatBreedCard from '../CatBreedCard/CatBreedCard';
 import { useNavigate } from 'react-router-dom';
 
 function RareCatBreeds({ rareCatBreeds }) {
@@ -12,7 +12,7 @@ function RareCatBreeds({ rareCatBreeds }) {
 
     const catBreedCards = rareCatBreeds.map(rareCatBreed => {
         return (
-            <RareCatBreedCard
+            <CatBreedCard
                 id={rareCatBreed.id}
                 key={rareCatBreed.id}
                 name={rareCatBreed.name}
@@ -32,10 +32,9 @@ function RareCatBreeds({ rareCatBreeds }) {
                         Add breeds you like to a list of favorites and learn more about them.
                     </p>
                 </div>
-                <button className='my-favorite-cats-button' onClick={handleViewFavorites }>My favorite cats</button>
+                <button className='my-favorite-cats-button' onClick={handleViewFavorites}>My favorite cats</button>
             </div>
             <div className='rare-cat-breed-container'>{catBreedCards}</div>
-            {/* <button className='see-all-cat-breed-button'>See all cat breeds</button> */}
         </main>
     )
 }

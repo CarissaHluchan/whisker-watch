@@ -1,7 +1,7 @@
-import './RareCatBreedCard.css';
+import './CatBreedCard.css';
 import { Link } from 'react-router-dom';
 
-function RareCatBreedCard({ id, name, image }) {
+function CatBreedCard({ id, name, image }) {
 
         return (
             <Link to={`/catBreed/${id}`} className='rare-cat-breed-card-wrapper' id={id} >
@@ -11,4 +11,4 @@ function RareCatBreedCard({ id, name, image }) {
         )
 }
 
-export default RareCatBreedCard;
+export default CatBreedCard;

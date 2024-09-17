@@ -10,15 +10,16 @@ import FavoriteCatBreeds from '../FavoriteCatBreeds/FavoriteCatBreeds';
 
 import { getCats } from '../../APIcalls';
 
-import { Routes, Route, Link } from 'react-router-dom';
-import { useState, useEffect, useParams } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
 
 function App() {
 
   const [rareCatBreeds, setRareCatBreeds] = useState([]);
   const [allCatBreeds, setAllCatBreeds] = useState([]);
-  const [favoriteCatbreeds, setFavoriteCatbreeds] = useState([]);
+  // const [favoriteCatbreeds, setFavoriteCatbreeds] = useState([]);
+  const [favoriteCatBreeds, setFavoriteCatBreeds] = useState([]);
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   useEffect(() => {
@@ -44,8 +45,17 @@ function App() {
   }, []);
 
   const addToFavoriteCatBreeds = (newFavoriteCatBreed) => {
-    setFavoriteCatbreeds(prevFavorites => {
-      return [...prevFavorites, newFavoriteCatBreed]
+    setFavoriteCatBreeds(prevFavorites => {
+      if (prevFavorites.some(breed => breed.id === newFavoriteCatBreed.id)) {
+        return prevFavorites; // If breed already exists, return current favorites
+      }
+      return [...prevFavorites, newFavoriteCatBreed];
+    });
+  };
+
+  const removeFromFavoriteCatBreeds = (catBreedToRemove) => {
+    setFavoriteCatBreeds(prevFavorites => {
+      return prevFavorites.filter(breed => breed.id !== catBreedToRemove.id);
     })
   }
 
@@ -80,13 +90,15 @@ function App() {
         />
         <Route
           path='/catBreed/:id'
-          element={<SingleCatBreed 
-            allCatBreeds={allCatBreeds} 
+          element={<SingleCatBreed
+            allCatBreeds={allCatBreeds}
             addToFavoriteCatBreeds={addToFavoriteCatBreeds} />}
         />
         <Route
           path='/favoriteCatbreeds'
-          element={<FavoriteCatBreeds />}
+          element={<FavoriteCatBreeds
+            allCatBreeds={allCatBreeds}
+            removeFromFavoriteCatBreeds={removeFromFavoriteCatBreeds} />}
         />
       </Routes>
 
