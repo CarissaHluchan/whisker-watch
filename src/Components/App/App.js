@@ -18,7 +18,6 @@ function App() {
 
   const [rareCatBreeds, setRareCatBreeds] = useState([]);
   const [allCatBreeds, setAllCatBreeds] = useState([]);
-  // const [favoriteCatbreeds, setFavoriteCatbreeds] = useState([]);
   const [favoriteCatBreeds, setFavoriteCatBreeds] = useState([]);
   const [isNavOpen, setIsNavOpen] = useState(false);
 
@@ -26,20 +25,12 @@ function App() {
     getCats()
       .then(data => {
         const rareBreeds = data.filter(breed => breed.rare === 1 || (breed.description && breed.description.toLowerCase().includes('rare')))
-        console.log(rareCatBreeds, 'rare cat breed Data from app')
-        setRareCatBreeds(rareBreeds)
+        // console.log(rareCatBreeds, 'rare cat breed Data from app')
+        setRareCatBreeds(rareBreeds);
+        setAllCatBreeds(data);
       })
       .catch(err => {
         console.error("Error fetching rare cat breeds from APP:", err);
-        throw err
-      });
-
-    getCats()
-      .then(data => {
-        setAllCatBreeds(data)
-      })
-      .catch(err => {
-        console.error("Error fetching all cat breeds from APP:", err);
         throw err
       });
   }, []);
@@ -55,7 +46,7 @@ function App() {
 
   const removeFromFavoriteCatBreeds = (catBreedToRemove) => {
     setFavoriteCatBreeds(prevFavorites => {
-      return prevFavorites.filter(breed => breed.id !== catBreedToRemove.id);
+      return prevFavorites.filter(breed => breed.id !== catBreedToRemove.id); // is .id needed?
     })
   }
 
@@ -78,27 +69,27 @@ function App() {
       <Routes>
         <Route
           path='/'
-          element={<RareCatBreeds
-            rareCatBreeds={rareCatBreeds}
-          />}
+          element={<RareCatBreeds rareCatBreeds={rareCatBreeds} />}
         />
         <Route
           path='/allCatBreeds'
-          element={<AllCatBreeds
-            allCatBreeds={allCatBreeds}
-          />}
+          element={<AllCatBreeds allCatBreeds={allCatBreeds} />}
         />
         <Route
           path='/catBreed/:id'
-          element={<SingleCatBreed
-            allCatBreeds={allCatBreeds}
-            addToFavoriteCatBreeds={addToFavoriteCatBreeds} />}
+          element={
+            <SingleCatBreed
+              allCatBreeds={allCatBreeds}
+              addToFavoriteCatBreeds={addToFavoriteCatBreeds}
+            />}
         />
         <Route
           path='/favoriteCatbreeds'
-          element={<FavoriteCatBreeds
-            allCatBreeds={allCatBreeds}
-            removeFromFavoriteCatBreeds={removeFromFavoriteCatBreeds} />}
+          element={
+            <FavoriteCatBreeds
+              allCatBreeds={allCatBreeds}
+              removeFromFavoriteCatBreeds={removeFromFavoriteCatBreeds}
+            />}
         />
       </Routes>
 

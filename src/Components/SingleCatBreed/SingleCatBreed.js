@@ -16,7 +16,7 @@ function SingleCatBreed({ allCatBreeds, addToFavoriteCatBreeds }) {
         navigate('/allCatBreeds')
     }
 
-    const handleBackToRareBreeds = () => {
+    const handleViewRareBreeds = () => {
         navigate('/')
     }
 
@@ -30,7 +30,7 @@ function SingleCatBreed({ allCatBreeds, addToFavoriteCatBreeds }) {
         <section className='sinlge-cat-section'>
             <div className='single-breed-button-wrapper'>
                 <button onClick={handleViewAllBreeds}>All Breeds</button>
-                <button onClick={handleBackToRareBreeds}>Rare Breeds</button>
+                <button onClick={handleViewRareBreeds}>Rare Breeds</button>
                 <button onClick={handleViewFavorites}>My Favorite Breeds</button>
             </div>
             <div className='single-cat-all-wrapper'>

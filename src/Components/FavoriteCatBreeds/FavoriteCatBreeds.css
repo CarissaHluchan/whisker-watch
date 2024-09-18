@@ -1,0 +1,14 @@
+.favorite-cat-breed-main {
+    color: var(--third-color);
+}
+
+.favorite-cat-breed-title {
+    margin-left: 1rem;
+}
+
+.favorite-cat-breed-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
