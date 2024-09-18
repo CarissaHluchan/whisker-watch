@@ -113,15 +113,14 @@ function App() {
 
       <footer>
         <div>Created By: Carissa Hluchan</div>
-        <div>
-          See it on:
           <a
             href="https://github.com/CarissaHluchan"
             target="_blank"
-            rel="noopener noreferrer">
-            GitHub
+            rel="noopener noreferrer"
+            className='url-link-github'
+            >
+            See it on: GitHub
           </a>
-        </div>
       </footer>
     </>
   );

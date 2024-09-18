@@ -66,3 +66,13 @@ footer {
     padding: 1.6rem;
     border: 2px solid var(--second-color);
 }
+
+.url-link-github {
+    margin: 0.3rem;
+}
+
+.url-link-github:hover {
+    color: var(--fith-color);
+    font-weight: 700;
+    text-decoration: underline;
+}
