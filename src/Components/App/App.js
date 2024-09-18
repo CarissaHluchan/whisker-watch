@@ -20,6 +20,7 @@ function App() {
   const [allCatBreeds, setAllCatBreeds] = useState([]);
   const [favoriteCatBreeds, setFavoriteCatBreeds] = useState([]);
   const [isNavOpen, setIsNavOpen] = useState(false);
+  // const [navTimeOut, setNavTimeOut] = useState(null);
 
   useEffect(() => {
     getCats()
@@ -50,15 +51,32 @@ function App() {
     })
   }
 
-  const toggleNav = () => {
-    setIsNavOpen(!isNavOpen)
-  }
+  // const toggleNav = () => {
+  //   setIsNavOpen(!isNavOpen);
+
+  //   if (navTimeOut) {
+  //     clearTimeout(navTimeOut);
+  //   }
+
+  //   if (!isNavOpen) {
+  //     const timeoutId = setTimeout(() => {
+  //       setIsNavOpen(false); 
+  //     }, 3000);
+  //     setNavTimeOut(timeoutId);
+  //   }
+  // };
 
   return (
     <>
       <header>
-        <img src={menu} className='menu-png' onClick={toggleNav} alt="Hamburger Menu" />
-        {isNavOpen && <Nav />}
+        <img
+          src={menu}
+          className='menu-png'
+          alt="Hamburger Menu"
+          onMouseEnter={() => setIsNavOpen(true)}
+          onMouseLeave={() => setIsNavOpen(false)}
+        />
+        {isNavOpen && <Nav setIsNavOpen={setIsNavOpen}/>}
         <h1>
           Whisker
           <img src={whiskerLogo} alt='Logo' className='whisker-logo' />

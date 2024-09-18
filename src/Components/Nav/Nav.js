@@ -1,10 +1,11 @@
+import PropTypes from 'prop-types';
 import './Nav.css';
 import { Link } from 'react-router-dom';
 
-function Nav() {
+function Nav({ setIsNavOpen}) {
 
     return (
-        <nav>
+        <nav onMouseEnter={() => setIsNavOpen(true)} onMouseLeave={() => setIsNavOpen(false)}>
             <Link to='/' className='nav-item'>Rare Cat Breeds</Link>
             <Link to='allCatBreeds' className='nav-item'>All Cat Breeds</Link>
             <Link to='/favoriteCatbreeds' className='nav-item'>Favorite Cat breeds</Link>
@@ -13,3 +14,7 @@ function Nav() {
 }
 
 export default Nav;
+
+Nav.propTypes = {
+    setIsNavOpen: PropTypes.bool
+}
