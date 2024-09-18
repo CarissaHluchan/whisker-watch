@@ -1,0 +1,57 @@
+.favorite-cat-breed-card-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: flex-end;
+    align-items: center;
+    width: 20rem;
+    height: 19rem;
+    background-color: var(--first-color);
+    border: 1px solid var(--second-color);
+    border-radius: 5px;
+    margin: 1rem;
+}
+.favorite-cat-breed-card-wrapper:hover {
+    cursor: pointer;
+}
+
+.favorite-cat-breed-name {
+    color: var(--third-color);
+    font-size: 1.6rem;
+    margin: 0.5rem;
+}
+
+.favorite-cat-breed-img {
+    position: relative;
+    top: .5rem;
+    height: 10rem;
+    width: auto;
+    border: 1px solid var(--second-color);
+    transition: transform 0.3s ease-in-out
+}
+
+.favorite-cat-breed-img:hover {
+    transform: scale(1.1);
+}
+
+.remove-from-favorites-button {
+    background-color: var(--fourth-color);
+    color: var(--fith-color);
+    font-family: var(--body-font);
+    font-optical-sizing: auto;
+    font-size: 1rem;
+    font-weight: var(--body-weight);
+    font-style: normal;
+    padding: .5rem;
+    border-style: double;
+    border-color: var(--fith-color);
+    border-radius: 5px;
+    margin: 1.5rem;
+    transition: transform 0.3s ease-in-out
+}
+
+.remove-from-favorites-button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    cursor: pointer;
+    transform: scale(1.1);
+}
