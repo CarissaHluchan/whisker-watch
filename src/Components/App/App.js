@@ -87,7 +87,7 @@ function App() {
           path='/favoriteCatbreeds'
           element={
             <FavoriteCatBreeds
-              allCatBreeds={allCatBreeds}
+              favoriteCatBreeds={favoriteCatBreeds}
               removeFromFavoriteCatBreeds={removeFromFavoriteCatBreeds}
             />}
         />

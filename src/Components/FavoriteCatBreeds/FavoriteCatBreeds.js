@@ -3,18 +3,18 @@ import defaultCatImage from '../../assets/default-cat.png';
 import FavoriteCatBreedCard from '../FavoriteCatBreedCard/FavoriteCatBreedCard';
 import { useNavigate } from 'react-router-dom';
 
-function FavoriteCatBreeds({ FavoriteCatBreeds = [], removeFromFavoriteCatBreeds }) {
+function FavoriteCatBreeds({ favoriteCatBreeds = [], removeFromFavoriteCatBreeds }) {
 
     const navigate = useNavigate();
 
-    const favoriteCatBreedCards = FavoriteCatBreeds.map(breed => {
+    const favoriteCatBreedCards = favoriteCatBreeds.map(breed => {
         return (
             <FavoriteCatBreedCard 
                 id={breed.id}
                 key={breed.id}
                 name={breed.name}
                 image={breed.image ? breed.image.url : defaultCatImage}
-                removeFromFavoriteCatBreeds={() => removeFromFavoriteCatBreeds(breed.id)}
+                removeFromFavoriteCatBreeds={() => removeFromFavoriteCatBreeds(breed)}
             />
         )
     })
