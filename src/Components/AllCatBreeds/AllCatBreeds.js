@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 
-import '../RareCatBreeds/RareCatBreeds.css';
+import './AllCatBreeds.css';
 import defaultCatImage from '../../assets/default-cat.png';
 import CatBreedCard from '../CatBreedCard/CatBreedCard';
 
@@ -25,11 +25,11 @@ function AllCatBreeds({ allCatBreeds }) {
         })
 
     return (
-        <main className='rare-cat-breed-main'>
-            <div className='rare-cat-breed-header'>
-                <div className='rare-cat-breed-title-wrapper'>
-                    <h2 className='rare-cat-breed-title'>All Cat Breeds</h2>
-                    <p className='rare-cat-breed-instructions'>
+        <main className='all-cat-breed-main'>
+            <div className='all-cat-breed-header'>
+                <div className='all-cat-breed-title-wrapper'>
+                    <h2 className='all-cat-breed-title'>All Cat Breeds</h2>
+                    <p className='all-cat-breed-instructions'>
                         Explore all the cat breeds we have. Scroll through and click on a
                         cat to learn more about that breed. Discover their temperament,
                         weight, lifespan, and more. Add breeds you like to a list of
@@ -43,9 +43,10 @@ function AllCatBreeds({ allCatBreeds }) {
                     My Favorite Cats
                 </button>
             </div>
-            <div className='rare-cat-breed-container'>{catBreedCards}</div>
+            <div className='all-cat-breed-container'>{catBreedCards}</div>
         </main>
     );
 }
+
 
 export default AllCatBreeds;
