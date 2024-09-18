@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
-
 import './SingleCatBreed.css';
 
 function SingleCatBreed({ allCatBreeds, addToFavoriteCatBreeds }) {

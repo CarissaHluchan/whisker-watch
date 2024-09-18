@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-import './Nav.css';
 import { Link } from 'react-router-dom';
+import './Nav.css';
 
 function Nav({ setIsNavOpen}) {
 

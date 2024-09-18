@@ -59,15 +59,7 @@ function App() {
           onMouseLeave={() => setIsNavOpen(false)}
         />
         {isNavOpen && <Nav setIsNavOpen={setIsNavOpen} />}
-        <h1>
-          Whisker
-          <img
-            src={whiskerLogo}
-            alt='Logo'
-            className='whisker-logo'
-          />
-          Watch
-        </h1>
+        <h1>Whisker<img src={whiskerLogo} alt='Logo' className='whisker-logo'/>Watch</h1>
       </header>
 
       <Routes>
@@ -81,21 +73,11 @@ function App() {
         />
         <Route
           path='/catBreed/:id'
-          element={
-            <SingleCatBreed
-              allCatBreeds={allCatBreeds}
-              addToFavoriteCatBreeds={addToFavoriteCatBreeds}
-            />
-          }
+          element={<SingleCatBreed allCatBreeds={allCatBreeds} addToFavoriteCatBreeds={addToFavoriteCatBreeds}/>}
         />
         <Route
           path='/favoriteCatbreeds'
-          element={
-            <FavoriteCatBreeds
-              favoriteCatBreeds={favoriteCatBreeds}
-              removeFromFavoriteCatBreeds={removeFromFavoriteCatBreeds}
-            />
-          }
+          element={<FavoriteCatBreeds favoriteCatBreeds={favoriteCatBreeds} removeFromFavoriteCatBreeds={removeFromFavoriteCatBreeds}/>}
         />
       </Routes>
 

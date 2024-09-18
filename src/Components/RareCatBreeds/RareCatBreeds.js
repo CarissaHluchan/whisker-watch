@@ -1,6 +1,6 @@
-import './RareCatBreeds.css';
 import CatBreedCard from '../CatBreedCard/CatBreedCard';
 import { useNavigate } from 'react-router-dom';
+import './RareCatBreeds.css';
 
 function RareCatBreeds({ rareCatBreeds }) {
     const navigate = useNavigate();
