@@ -51,7 +51,7 @@ function SingleCatBreed({ allCatBreeds, addToFavoriteCatBreeds }) {
 
                 <div className='termperament-wrapper'>
                     <div className='single-cat-content-title'>Temperament</div>
-                    <div className='single-cat-content'>{catBreed.temperament}</div>
+                    <div className='single-cat-content-temperment'>{catBreed.temperament}</div>
                 </div>
 
                 <div className='wrapper-weight-lifespan-country'>

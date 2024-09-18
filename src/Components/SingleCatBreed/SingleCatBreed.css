@@ -23,7 +23,7 @@ button {
 }
 
 button:hover {
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
     cursor: pointer;
     transform: scale(1.1);
 }
@@ -71,6 +71,7 @@ button:hover {
     margin-top: 0;
 }
 
+/*--------------------// image & Description //-------------------------*/
 .single-cat-breed-image {
     height: 14rem;
     border: 1px solid var(--third-color);
@@ -88,19 +89,28 @@ button:hover {
     width: 54vw;
 }
 
+/*---------------------------// Content //--------------------------*/
 .single-cat-content-title {
     color: var(--fith-color);
     font-size: 1.5rem;
     font-weight: 700;
     margin-left: 1rem;
     margin-bottom: .5rem;
+    margin-top: 0.5rem;
 }
 
 .single-cat-content {
     font-size: 1.2rem;
     margin-left: 2rem;
     margin-right: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+}
+
+.single-cat-content-temperment {
+    font-size: 1.2rem;
+    margin-left: 2rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
 }
 
 .single-cat-content-weight {
@@ -117,7 +127,7 @@ button:hover {
     justify-content: space-around;
 }
 
-/*---------------------// Rated Trait //---------------------*/
+/*---------------------// Traits //---------------------*/
 .single-cat-trait-content {
     font-size: 1.2rem;
     margin-left: 2rem;
@@ -142,17 +152,18 @@ button:hover {
     flex-direction: row;
     align-items: flex-start;
 }
+
 .trait-content-title {
     color: var(--fith-color);
     font-size: 1.3rem;
     font-weight: 700;
-    margin-left: 1rem;
+    margin-left: 2rem;
     margin-bottom: .5rem;
 }
 
 .trait-content {
     font-size: 1.3rem;
-    margin-left: 1rem;
+    margin-left: 2rem;
     margin-right: 1rem;
 }
 
@@ -180,4 +191,44 @@ button:hover {
 
 .bottom {
     margin-bottom: 2rem;
+}
+
+/*-----------------// Rreactive brake-points //----------------*/
+
+/* 843px */
+@media screen and (max-width: 843px) {
+    .all-traites-wrapper {
+        justify-content: flex-start;
+    }
+
+    .wrapper-weight-lifespan-country {
+        justify-content: flex-start;
+    }
+
+    .description-wrapper {
+        width: 100vw;
+    }
+}
+
+@media screen and (max-width: 395px) {
+    /* .sinlge-cat-section {
+        font-size: 1.6rem;
+    } */
+    .single-cat-breed-image {
+        width: 85vw;
+        height: auto;
+    }
+
+    .single-cat-content-title {
+        font-size: 1.4em;
+    }
+
+    .single-cat-content,
+    .single-cat-content-temperment,
+    .single-cat-content-weight,
+    .single-cat-trait-content,
+    .trait-content-title,
+    .trait-content  {
+        font-size: 1rem;
+    }
 }
