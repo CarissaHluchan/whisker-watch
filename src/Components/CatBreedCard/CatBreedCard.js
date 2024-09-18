@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import './CatBreedCard.css';
 import { Link } from 'react-router-dom';
 
@@ -12,3 +13,8 @@ function CatBreedCard({ id, name, image }) {
 }
 
 export default CatBreedCard;
+
+CatBreedCard.propTypes = {
+    image: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired
+}
