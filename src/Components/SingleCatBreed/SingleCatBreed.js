@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import './SingleCatBreed.css';
 import { useParams, useNavigate } from 'react-router-dom';
 
@@ -189,3 +190,47 @@ function SingleCatBreed({ allCatBreeds, addToFavoriteCatBreeds }) {
 }
 
 export default SingleCatBreed;
+
+SingleCatBreed.propTypes = {
+    allCatBreeds: [
+        {
+            weight: {
+                imperial: PropTypes.string,
+                metric: PropTypes.string,
+            },
+            id: PropTypes.string,
+            name: PropTypes.string.isRequired,
+            cfa_url: PropTypes.string,
+            vetstreet_url: PropTypes.string,
+            vcahospitals_url: PropTypes.string,
+            temperament: PropTypes.string,
+            origin: PropTypes.string,
+            description: PropTypes.string,
+            life_span: PropTypes.string,
+            adaptability: PropTypes.number,
+            affection_level: PropTypes.number,
+            child_friendly: PropTypes.number,
+            dog_friendly: PropTypes.number,
+            energy_level:PropTypes.number ,
+            grooming: PropTypes.number,
+            health_issues: PropTypes.number,
+            intelligence: PropTypes.number,
+            shedding_level: PropTypes.number,
+            social_needs: PropTypes.number,
+            stranger_friendly: PropTypes.number,
+            vocalisation: PropTypes.number,
+            experimental: PropTypes.number,
+            hairless: PropTypes.number,
+            natural: PropTypes.number,
+            rare: PropTypes.number,
+            rex: PropTypes.number,
+            suppressed_tail: PropTypes.number,
+            short_legs: PropTypes.number,
+            wikipedia_url: PropTypes.string,
+            hypoallergenic: PropTypes.number,
+            image: {
+                url: PropTypes.string,
+            }
+        }
+    ]
+}
