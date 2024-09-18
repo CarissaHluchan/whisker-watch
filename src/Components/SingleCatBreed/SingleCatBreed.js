@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
-import './SingleCatBreed.css';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
+
+import './SingleCatBreed.css';
 
 function SingleCatBreed({ allCatBreeds, addToFavoriteCatBreeds }) {
 
@@ -18,32 +19,20 @@ function SingleCatBreed({ allCatBreeds, addToFavoriteCatBreeds }) {
         alert(`${catBreed.name} has been added to your favorites!`);
     };
 
-    const handleViewAllBreeds = () => {
-        navigate('/allCatBreeds');
-    }
+    const handleViewAllBreeds = () => navigate('/allCatBreeds');
 
-    const handleViewRareBreeds = () => {
-        navigate('/');
-    }
+    const handleViewRareBreeds = () => navigate('/');
 
-    const handleViewFavorites = () => {
-        navigate('/favoriteCatbreeds');
-    }
+    const handleViewFavorites = () => navigate('/favoriteCatbreeds');
 
     const convertTrait = (trait) => trait === 0 ? 'No' : 'Yes';
 
     return (
         <section className='sinlge-cat-section'>
             <div className='single-breed-button-wrapper'>
-                <button onClick={handleViewAllBreeds}>
-                    All Breeds
-                </button>
-                <button onClick={handleViewRareBreeds}>
-                    Rare Breeds
-                </button>
-                <button onClick={handleViewFavorites}>
-                    My Favorite Breeds
-                </button>
+                <button onClick={handleViewAllBreeds}>All Breeds</button>
+                <button onClick={handleViewRareBreeds}>Rare Breeds</button>
+                <button onClick={handleViewFavorites}>My Favorite Breeds</button>
             </div>
             <div className='single-cat-all-wrapper'>
                 <div className='add-to-favorites-button-wrapper'>
@@ -54,9 +43,7 @@ function SingleCatBreed({ allCatBreeds, addToFavoriteCatBreeds }) {
                         Add Breed to Favorites
                     </button>
                 </div>
-                <h3 className='single-cat-breed-name'>
-                    {catBreed.name}
-                </h3>
+                <h3 className='single-cat-breed-name'>{catBreed.name}</h3>
 
                 <div className='single-cat-img-des-wrapper'>
                     <img
@@ -64,252 +51,141 @@ function SingleCatBreed({ allCatBreeds, addToFavoriteCatBreeds }) {
                         src={catBreed.image.url}
                     />
                     <div className='description-wrapper'>
-                        <div className='single-cat-content-title'>
-                            Description
-                        </div>
-                        <div className='single-cat-content'>
-                            {catBreed.description}
-                        </div>
+                        <div className='single-cat-content-title'>Description</div>
+                        <div className='single-cat-content'>{catBreed.description}</div>
                     </div>
                 </div>
 
 
                 <div className='termperament-wrapper'>
-                    <div className='single-cat-content-title'>
-                        Temperament
-                    </div>
-                    <div className='single-cat-content-temperment'>
-                        {catBreed.temperament}
-                    </div>
+                    <div className='single-cat-content-title'>Temperament</div>
+                    <div className='single-cat-content-temperment'>{catBreed.temperament}</div>
                 </div>
 
                 <div className='wrapper-weight-lifespan-country'>
                     <div className='weight-wrapper'>
-                        <div className='single-cat-content-title'>
-                            Weight
-                        </div>
-                        <div className='single-cat-content-weight'>
-                            {catBreed.weight.imperial} lbs
-                        </div>
-                        <div className='single-cat-content'>
-                            {catBreed.weight.metric} kg
-                        </div>
+                        <div className='single-cat-content-title'>Weight</div>
+                        <div className='single-cat-content-weight'>{catBreed.weight.imperial} lbs</div>
+                        <div className='single-cat-content'>{catBreed.weight.metric} kg</div>
                     </div>
                     <div className='lifespan-wrapper'>
-                        <div className='single-cat-content-title'>
-                            Lifespan
-                        </div>
-                        <div className='single-cat-content'>
-                            {catBreed.life_span} years
-                        </div>
+                        <div className='single-cat-content-title'>Lifespan</div>
+                        <div className='single-cat-content'>{catBreed.life_span} years</div>
                     </div>
                     <div className='country-wrapper'>
-                        <div className='single-cat-content-title'>
-                            Country of Origin
+                        <div className='single-cat-content-title'>Country of Origin</div>
+                        <div className='single-cat-content'>{catBreed.origin}</div>
+                    </div>
+                </div>
+
+                <div className='traites-title-wrapper'>
+                    <div className='single-cat-content-title'>Traits</div>
+                    <div className='single-cat-trait-content'>Ranges are 1 (least) - 5 (most)</div>
+                </div>
+                <div className='all-traites-wrapper'>
+                    <div className='traites-wrapper'>
+                        <div className='trait-wrapper'>
+                            <div className='trait-content-title'>Adaptability</div>
+                            <div className='trait-content'>{catBreed.adaptability}</div>
                         </div>
-                        <div className='single-cat-content'>
-                            {catBreed.origin}
+                        <div className='trait-wrapper'>
+                            <div className='trait-content-title'>Affection level</div>
+                            <div className='trait-content'>{catBreed.affection_level}</div>
+                        </div>
+                        <div className='trait-wrapper'>
+                            <div className='trait-content-title'>Child friendly</div>
+                            <div className='trait-content'>{catBreed.child_friendly}</div>
+                        </div>
+                        <div className='trait-wrapper'>
+                            <div className='trait-content-title'>Dog friendly</div>
+                            <div className='trait-content'>{catBreed.dog_friendly}</div>
+                        </div>
+                    </div>
+                    <div className='traites-wrapper'>
+                        <div className='trait-wrapper'>
+                            <div className='trait-content-title'>Energy level</div>
+                            <div className='trait-content'>{catBreed.energy_level}</div>
+                        </div>
+                        <div className='trait-wrapper'>
+                            <div className='trait-content-title'>Grooming</div>
+                            <div className='trait-content'>{catBreed.grooming}</div>
+                        </div>
+                        <div className='trait-wrapper'>
+                            <div className='trait-content-title'>Health issues</div>
+                            <div className='trait-content'>{catBreed.health_issues}</div>
+                        </div>
+                        <div className='trait-wrapper'>
+                            <div className='trait-content-title'>Intelligence</div>
+                            <div className='trait-content'>{catBreed.intelligence}</div>
+                        </div>
+                    </div>
+                    <div className='traites-wrapper'>
+                        <div className='trait-wrapper'>
+                            <div className='trait-content-title'>Shedding level</div>
+                            <div className='trait-content'>{catBreed.shedding_level}</div>
+                        </div>
+                        <div className='trait-wrapper'>
+                            <div className='trait-content-title'>Social needs</div>
+                            <div className='trait-content'>{catBreed.social_needs}</div>
+                        </div>
+                        <div className='trait-wrapper'>
+                            <div className='trait-content-title'>Stranger friendly</div>
+                            <div className='trait-content'>{catBreed.stranger_friendly}</div>
+                        </div>
+                        <div className='trait-wrapper'>
+                            <div className='trait-content-title'>Vocalisation</div>
+                            <div className='trait-content'>{catBreed.vocalisation}</div>
                         </div>
                     </div>
                 </div>
 
                 <div className='traites-title-wrapper'>
-                    <div className='single-cat-content-title'>
-                        Traits
-                    </div>
-                    <div className='single-cat-trait-content'>
-                        Ranges are 1 (least) - 5 (most)
-                    </div>
+                    <div className='other-traits-content-title'>Other Traits</div>
+                    <div className='single-cat-trait-content'>Ranges: has the trait (yes). Does not have the trait (no).</div>
                 </div>
                 <div className='all-traites-wrapper'>
                     <div className='traites-wrapper'>
                         <div className='trait-wrapper'>
-                            <div className='trait-content-title'>
-                                Adaptability
+                            <div className='trait-content-title'>Experimental
                             </div>
-                            <div className='trait-content'>
-                                {catBreed.adaptability}
-                            </div>
+                            <div className='trait-content'>{convertTrait(catBreed.experimental)}</div>
                         </div>
                         <div className='trait-wrapper'>
-                            <div className='trait-content-title'>
-                                Affection level
-                            </div>
-                            <div className='trait-content'>
-                                {catBreed.affection_level}
-                            </div>
+                            <div className='trait-content-title'>Hairless</div>
+                            <div className='trait-content'>{convertTrait(catBreed.hairless)}</div>
                         </div>
                         <div className='trait-wrapper'>
-                            <div className='trait-content-title'>
-                                Child friendly
-                            </div>
-                            <div className='trait-content'>
-                                {catBreed.child_friendly}
-                            </div>
-                        </div>
-                        <div className='trait-wrapper'>
-                            <div className='trait-content-title'>
-                                Dog friendly
-                            </div>
-                            <div className='trait-content'>
-                                {catBreed.dog_friendly}
-                            </div>
+                            <div className='trait-content-title'>Natural</div>
+                            <div className='trait-content'>{convertTrait(catBreed.natural)}</div>
                         </div>
                     </div>
                     <div className='traites-wrapper'>
                         <div className='trait-wrapper'>
-                            <div className='trait-content-title'>
-                                Energy level
-                            </div>
-                            <div className='trait-content'>
-                                {catBreed.energy_level}
-                            </div>
+                            <div className='trait-content-title'>Rare</div>
+                            <div className='trait-content'>{convertTrait(catBreed.rare)}</div>
                         </div>
                         <div className='trait-wrapper'>
-                            <div className='trait-content-title'>
-                                Grooming
-                            </div>
-                            <div className='trait-content'>
-                                {catBreed.grooming}
-                            </div>
+                            <div className='trait-content-title'>Rex</div>
+                            <div className='trait-content'>{convertTrait(catBreed.rex)}</div>
                         </div>
                         <div className='trait-wrapper'>
-                            <div className='trait-content-title'>
-                                Health issues
-                            </div>
-                            <div className='trait-content'>
-                                {catBreed.health_issues}
-                            </div>
-                        </div>
-                        <div className='trait-wrapper'>
-                            <div className='trait-content-title'>
-                                Intelligence
-                            </div>
-                            <div className='trait-content'>
-                                {catBreed.intelligence}
-                            </div>
+                            <div className='trait-content-title'>Suppressed tail</div>
+                            <div className='trait-content'>{convertTrait(catBreed.suppressed_tail)}</div>
                         </div>
                     </div>
                     <div className='traites-wrapper'>
                         <div className='trait-wrapper'>
-                            <div className='trait-content-title'>
-                                Shedding level
-                            </div>
-                            <div className='trait-content'>
-                                {catBreed.shedding_level}
-                            </div>
+                            <div className='trait-content-title'>Short legs</div>
+                            <div className='trait-content'>{convertTrait(catBreed.short_legs)}</div>
                         </div>
                         <div className='trait-wrapper'>
-                            <div className='trait-content-title'>
-                                Social needs
-                            </div>
-                            <div className='trait-content'>
-                                {catBreed.social_needs}
-                            </div>
-                        </div>
-                        <div className='trait-wrapper'>
-                            <div className='trait-content-title'>
-                                Stranger friendly
-                            </div>
-                            <div className='trait-content'>
-                                {catBreed.stranger_friendly}
-                            </div>
-                        </div>
-                        <div className='trait-wrapper'>
-                            <div className='trait-content-title'>
-                                Vocalisation
-                            </div>
-                            <div className='trait-content'>
-                                {catBreed.vocalisation}
-                            </div>
+                            <div className='trait-content-title'>Hypoallergenic</div>
+                            <div className='trait-content'>{convertTrait(catBreed.hypoallergenic)}</div>
                         </div>
                     </div>
                 </div>
 
-                <div className='traites-title-wrapper'>
-                    <div className='other-traits-content-title'>
-                        Other Traits
-                    </div>
-                    <div className='single-cat-trait-content'>
-                        Ranges: has the trait (yes). Does not have the trait (no).
-                    </div>
-                </div>
-                <div className='all-traites-wrapper'>
-                    <div className='traites-wrapper'>
-                        <div className='trait-wrapper'>
-                            <div className='trait-content-title'>
-                                Experimental
-                            </div>
-                            <div className='trait-content'>
-                                {convertTrait(catBreed.experimental)}
-                            </div>
-                        </div>
-                        <div className='trait-wrapper'>
-                            <div className='trait-content-title'>
-                                Hairless
-                            </div>
-                            <div className='trait-content'>
-                                {convertTrait(catBreed.hairless)}
-                            </div>
-                        </div>
-                        <div className='trait-wrapper'>
-                            <div className='trait-content-title'>
-                                Natural
-                            </div>
-                            <div className='trait-content'>
-                                {convertTrait(catBreed.natural)}
-                            </div>
-                        </div>
-                    </div>
-                    <div className='traites-wrapper'>
-                        <div className='trait-wrapper'>
-                            <div className='trait-content-title'>
-                                Rare
-                            </div>
-                            <div className='trait-content'>
-                                {convertTrait(catBreed.rare)}
-                            </div>
-                        </div>
-                        <div className='trait-wrapper'>
-                            <div className='trait-content-title'>
-                                Rex
-                            </div>
-                            <div className='trait-content'>
-                                {convertTrait(catBreed.rex)}
-                            </div>
-                        </div>
-                        <div className='trait-wrapper'>
-                            <div className='trait-content-title'>
-                                Suppressed tail
-                            </div>
-                            <div className='trait-content'>
-                                {convertTrait(catBreed.suppressed_tail)}
-                            </div>
-                        </div>
-                    </div>
-                    <div className='traites-wrapper'>
-                        <div className='trait-wrapper'>
-                            <div className='trait-content-title'>
-                                Short legs
-                            </div>
-                            <div className='trait-content'>
-                                {convertTrait(catBreed.short_legs)}
-                            </div>
-                        </div>
-                        <div className='trait-wrapper'>
-                            <div className='trait-content-title'>
-                                Hypoallergenic
-                            </div>
-                            <div className='trait-content'>
-                                {convertTrait(catBreed.hypoallergenic)}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div className='other-traits-content-title '>
-                    More Information
-                </div>
+                <div className='other-traits-content-title '>More Information</div>
                 <div className='traites-wrapper'>
                     {catBreed.cfa_url && (
                         <a
@@ -401,5 +277,6 @@ SingleCatBreed.propTypes = {
                 url: PropTypes.string,
             }
         }
-    ]
+    ],
+    addToFavoriteCatBreeds: PropTypes.func.isRequired,
 }
