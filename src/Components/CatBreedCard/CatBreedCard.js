@@ -15,6 +15,7 @@ function CatBreedCard({ id, name, image }) {
 export default CatBreedCard;
 
 CatBreedCard.propTypes = {
-    image: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired
+    image : PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    id: PropTypes.string,
 }

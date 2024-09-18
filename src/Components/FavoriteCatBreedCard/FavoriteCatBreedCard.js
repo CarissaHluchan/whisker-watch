@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import './FavoriteCatBreedCard.css';
 import { Link } from "react-router-dom";
 
@@ -23,3 +24,9 @@ function FavoriteCatBreedCard({ id, name, image, removeFromFavoriteCatBreeds }) 
 }
 
 export default FavoriteCatBreedCard;
+
+FavoriteCatBreedCard.propTypes = {
+    image : PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    id: PropTypes.string,
+}
