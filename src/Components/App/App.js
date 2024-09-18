@@ -12,7 +12,6 @@ import FavoriteCatBreeds from '../FavoriteCatBreeds/FavoriteCatBreeds';
 import { getCats } from '../../APIcalls';
 
 function App() {
-
   const [rareCatBreeds, setRareCatBreeds] = useState([]);
   const [allCatBreeds, setAllCatBreeds] = useState([]);
   const [favoriteCatBreeds, setFavoriteCatBreeds] = useState([]);
