@@ -1,18 +1,15 @@
+import { useState, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
+
 import './App.css';
 import whiskerLogo from '../../assets/Whisker-Watch.png';
 import menu from '../../assets/menu.png';
-
 import Nav from '../Nav/Nav';
 import RareCatBreeds from '../RareCatBreeds/RareCatBreeds';
 import AllCatBreeds from '../AllCatBreeds/AllCatBreeds';
 import SingleCatBreed from '../SingleCatBreed/SingleCatBreed';
 import FavoriteCatBreeds from '../FavoriteCatBreeds/FavoriteCatBreeds';
-
 import { getCats } from '../../APIcalls';
-
-import { Routes, Route } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-
 
 function App() {
 
@@ -24,13 +21,16 @@ function App() {
   useEffect(() => {
     getCats()
       .then(data => {
-        const rareBreeds = data.filter(breed => breed.rare === 1 || (breed.description && breed.description.toLowerCase().includes('rare')))
+        const rareBreeds = data.filter(breed =>
+          breed.rare === 1 || 
+          (breed.description && breed.description.toLowerCase().includes('rare'))
+        );
         setRareCatBreeds(rareBreeds);
         setAllCatBreeds(data);
       })
       .catch(err => {
         console.error("Error fetching rare cat breeds from APP:", err);
-        throw err
+        throw err;
       });
   }, []);
 
@@ -44,10 +44,10 @@ function App() {
   };
 
   const removeFromFavoriteCatBreeds = (catBreedToRemove) => {
-    setFavoriteCatBreeds(prevFavorites => {
-      return prevFavorites.filter(breed => breed.id !== catBreedToRemove.id);
-    })
-  }
+    setFavoriteCatBreeds(prevFavorites =>
+      prevFavorites.filter(breed => breed.id !== catBreedToRemove.id)
+    );
+  };
 
   return (
     <>
@@ -59,10 +59,14 @@ function App() {
           onMouseEnter={() => setIsNavOpen(true)}
           onMouseLeave={() => setIsNavOpen(false)}
         />
-        {isNavOpen && <Nav setIsNavOpen={setIsNavOpen}/>}
+        {isNavOpen && <Nav setIsNavOpen={setIsNavOpen} />}
         <h1>
           Whisker
-          <img src={whiskerLogo} alt='Logo' className='whisker-logo' />
+          <img
+            src={whiskerLogo}
+            alt='Logo'
+            className='whisker-logo'
+          />
           Watch
         </h1>
       </header>
@@ -82,7 +86,8 @@ function App() {
             <SingleCatBreed
               allCatBreeds={allCatBreeds}
               addToFavoriteCatBreeds={addToFavoriteCatBreeds}
-            />}
+            />
+          }
         />
         <Route
           path='/favoriteCatbreeds'
@@ -90,20 +95,21 @@ function App() {
             <FavoriteCatBreeds
               favoriteCatBreeds={favoriteCatBreeds}
               removeFromFavoriteCatBreeds={removeFromFavoriteCatBreeds}
-            />}
+            />
+          }
         />
       </Routes>
 
       <footer>
         <div>Created By: Carissa Hluchan</div>
-          <a
-            href="https://github.com/CarissaHluchan"
-            target="_blank"
-            rel="noopener noreferrer"
-            className='url-link-github'
-            >
-            See it on: GitHub
-          </a>
+        <a
+          href="https://github.com/CarissaHluchan"
+          target="_blank"
+          rel="noopener noreferrer"
+          className='url-link-github'
+        >
+          See it on: GitHub
+        </a>
       </footer>
     </>
   );
