@@ -33,3 +33,14 @@
     color: var(--third-color);
     font-size: 1.6rem;
 }
+
+@media screen and (max-width: 330px){
+    .rare-cat-breed-img {
+        width: 60vw;
+        height: auto;
+    }
+
+    .rare-cat-breed-name {
+        font-size: 1.1rem;
+    }
+}

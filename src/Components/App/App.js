@@ -20,13 +20,11 @@ function App() {
   const [allCatBreeds, setAllCatBreeds] = useState([]);
   const [favoriteCatBreeds, setFavoriteCatBreeds] = useState([]);
   const [isNavOpen, setIsNavOpen] = useState(false);
-  // const [navTimeOut, setNavTimeOut] = useState(null);
 
   useEffect(() => {
     getCats()
       .then(data => {
         const rareBreeds = data.filter(breed => breed.rare === 1 || (breed.description && breed.description.toLowerCase().includes('rare')))
-        // console.log(rareCatBreeds, 'rare cat breed Data from app')
         setRareCatBreeds(rareBreeds);
         setAllCatBreeds(data);
       })
@@ -39,7 +37,7 @@ function App() {
   const addToFavoriteCatBreeds = (newFavoriteCatBreed) => {
     setFavoriteCatBreeds(prevFavorites => {
       if (prevFavorites.some(breed => breed.id === newFavoriteCatBreed.id)) {
-        return prevFavorites; // If breed already exists, return current favorites
+        return prevFavorites;
       }
       return [...prevFavorites, newFavoriteCatBreed];
     });
@@ -47,24 +45,9 @@ function App() {
 
   const removeFromFavoriteCatBreeds = (catBreedToRemove) => {
     setFavoriteCatBreeds(prevFavorites => {
-      return prevFavorites.filter(breed => breed.id !== catBreedToRemove.id); // is .id needed?
+      return prevFavorites.filter(breed => breed.id !== catBreedToRemove.id);
     })
   }
-
-  // const toggleNav = () => {
-  //   setIsNavOpen(!isNavOpen);
-
-  //   if (navTimeOut) {
-  //     clearTimeout(navTimeOut);
-  //   }
-
-  //   if (!isNavOpen) {
-  //     const timeoutId = setTimeout(() => {
-  //       setIsNavOpen(false); 
-  //     }, 3000);
-  //     setNavTimeOut(timeoutId);
-  //   }
-  // };
 
   return (
     <>

@@ -87,26 +87,43 @@ footer {
     .menu-png {
         position: relative;
         left: 0;
-        width: 2.5rem;
+        width: 3.5rem;
     }
 
     h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     .whisker-logo  {
-        width: 17vw;
+        width: 13rem;
     }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 683px) {
     h1 {
-        font-size: 1.5rem;
+        font-size: 2rem;
+    } 
+
+    .whisker-logo  {
+        width: 8rem;
     }
 }
 
-@media screen and (max-width: 405px) {
+
+@media screen and (max-width: 540px) {
     h1 {
-        font-size: 1rem;
+        font-size: 2.5rem;
+        display: flex;
+        position: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header  {
+        align-items: flex-start;
+    }
+
+    .whisker-logo  {
+        width: 10rem;
     }
 }
