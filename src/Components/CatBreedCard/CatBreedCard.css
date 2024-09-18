@@ -34,6 +34,7 @@
     font-size: 1.6rem;
 }
 
+/*----------------// brake-point //----------------*/
 @media screen and (max-width: 330px){
     .rare-cat-breed-img {
         width: 60vw;

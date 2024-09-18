@@ -23,7 +23,6 @@ h1 {
     font-style: normal;
     font-size: 2.5rem;
     margin-right: 2rem;
-    /* border: 1px solid black; */
 }
 
 .whisker-logo {
@@ -31,7 +30,6 @@ h1 {
     width: 11rem;
     margin-left: 5px;
     margin-right: 5px;
-    /* border: 1px solid black; */
 }
 
 .see-all-cat-breed-button {
@@ -121,6 +119,7 @@ footer {
 
     header  {
         align-items: flex-start;
+        justify-content: space-between;
     }
 
     .whisker-logo  {
