@@ -15,7 +15,7 @@ function SingleCatBreed({ allCatBreeds, addToFavoriteCatBreeds }) {
 
     if (!catBreed) {
         return (
-            <div>Cat breed not found</div>
+            <div>Cat breed is loading or could not be found.</div>
         );
     };
 
