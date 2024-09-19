@@ -18,20 +18,22 @@ function App() {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   useEffect(() => {
-    getCats()
-      .then(data => {
+    const fetchCatBreeds = async () => {
+      try {
+        const data = await getCats();
         const rareBreeds = data.filter(breed =>
           breed.rare === 1 || 
           (breed.description && breed.description.toLowerCase().includes('rare'))
         );
         setRareCatBreeds(rareBreeds);
         setAllCatBreeds(data);
-      })
-      .catch(err => {
+      } catch (err) {
         console.error("Error fetching rare cat breeds from APP:", err);
-        throw err;
-      });
-  }, []);
+      }
+    };
+
+    fetchCatBreeds();
+  }, []); 
 
   const addToFavoriteCatBreeds = (newFavoriteCatBreed) => {
     setFavoriteCatBreeds(prevFavorites => {

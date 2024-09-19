@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
+import defaultCatImage from '../../assets/default-cat.png';
 import './FavoriteCatBreedCard.css';
 
-function FavoriteCatBreedCard({ id, name, image, removeFromFavoriteCatBreeds }) {
+function FavoriteCatBreedCard({ id, name = 'Unknown Breed', image = defaultCatImage, removeFromFavoriteCatBreeds }) {
     const handleRemoveClick = (event) => {
         event.preventDefault();
         removeFromFavoriteCatBreeds(id);
@@ -16,15 +17,6 @@ function FavoriteCatBreedCard({ id, name, image, removeFromFavoriteCatBreeds }) 
         </Link>
     )
 }
-
-FavoriteCatBreedCard.defaultProps = {
-    catBreed: {
-      name: 'Unknown',
-      image: {
-        url: 'default_image_url'
-      }
-    }
-  };
 
 FavoriteCatBreedCard.propTypes = {
     image: PropTypes.string,

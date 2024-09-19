@@ -41,15 +41,6 @@ function FavoriteCatBreeds({ favoriteCatBreeds = [], removeFromFavoriteCatBreeds
     );
 }
 
-FavoriteCatBreeds.defaultProps = {
-    catBreed: {
-      name: 'Unknown',
-      image: {
-        url: 'default_image_url'
-      }
-    }
-  };
-
 FavoriteCatBreeds.protoType = {
     favoriteCatBreeds: PropTypes.arrayOf(
         PropTypes.shape({
