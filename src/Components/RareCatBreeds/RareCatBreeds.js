@@ -1,7 +1,9 @@
 import PropTypes from 'prop-types';
-import CatBreedCard from '../CatBreedCard/CatBreedCard';
 import { useNavigate } from 'react-router-dom';
+
 import './RareCatBreeds.css';
+import defaultCatImage from '../../assets/default-cat.png';
+import CatBreedCard from '../CatBreedCard/CatBreedCard';
 
 function RareCatBreeds({ rareCatBreeds }) {
     const navigate = useNavigate();
@@ -16,7 +18,7 @@ function RareCatBreeds({ rareCatBreeds }) {
                 id={rareCatBreed.id}
                 key={rareCatBreed.id}
                 name={rareCatBreed.name}
-                image={rareCatBreed.image.url}
+                image={rareCatBreed.image && rareCatBreed.image.url ? rareCatBreed.image.url : defaultCatImage}
             />
         )
     })
