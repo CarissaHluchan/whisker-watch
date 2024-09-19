@@ -49,6 +49,15 @@ function AllCatBreeds({ allCatBreeds }) {
     );
 }
 
+AllCatBreeds.defaultProps = {
+    catBreed: {
+      name: 'Unknown',
+      image: {
+        url: 'default_image_url'
+      }
+    }
+  };
+
 AllCatBreeds.propTypes = {
     allCatBreeds: PropTypes.arrayOf(
         PropTypes.shape({

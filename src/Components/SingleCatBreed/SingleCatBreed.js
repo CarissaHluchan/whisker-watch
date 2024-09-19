@@ -239,6 +239,15 @@ function SingleCatBreed({ allCatBreeds, addToFavoriteCatBreeds }) {
     )
 }
 
+SingleCatBreed.defaultProps = {
+    catBreed: {
+      name: 'Unknown',
+      image: {
+        url: 'default_image_url'
+      }
+    }
+  };
+
 SingleCatBreed.propTypes = {
     allCatBreeds: PropTypes.arrayOf(
         PropTypes.shape({

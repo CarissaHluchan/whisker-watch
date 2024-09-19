@@ -11,6 +11,15 @@ function CatBreedCard({ id, name, image }) {
     )
 }
 
+CatBreedCard.defaultProps = {
+    catBreed: {
+      name: 'Unknown',
+      image: {
+        url: 'default_image_url'
+      }
+    }
+  };
+
 CatBreedCard.propTypes = {
     image: PropTypes.string,
     name: PropTypes.string.isRequired,

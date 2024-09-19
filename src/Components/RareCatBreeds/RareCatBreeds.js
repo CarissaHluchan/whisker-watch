@@ -47,6 +47,15 @@ function RareCatBreeds({ rareCatBreeds }) {
     )
 }
 
+RareCatBreeds.defaultProps = {
+    catBreed: {
+      name: 'Unknown',
+      image: {
+        url: 'default_image_url'
+      }
+    }
+  };
+
 RareCatBreeds.propTypes = {
     rareCatBreeds: PropTypes.arrayOf(
         PropTypes.shape({

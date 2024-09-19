@@ -17,6 +17,15 @@ function FavoriteCatBreedCard({ id, name, image, removeFromFavoriteCatBreeds }) 
     )
 }
 
+FavoriteCatBreedCard.defaultProps = {
+    catBreed: {
+      name: 'Unknown',
+      image: {
+        url: 'default_image_url'
+      }
+    }
+  };
+
 FavoriteCatBreedCard.propTypes = {
     image: PropTypes.string,
     name: PropTypes.string.isRequired,
