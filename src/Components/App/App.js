@@ -25,8 +25,8 @@ function App() {
           breed.rare === 1 || 
           (breed.description && breed.description.toLowerCase().includes('rare'))
         );
-        setRareCatBreeds(rareBreeds);
-        setAllCatBreeds(data);
+        setRareCatBreeds(() => rareBreeds);
+        setAllCatBreeds(() => data);
       } catch (err) {
         console.error("Error fetching rare cat breeds from APP:", err);
       }
