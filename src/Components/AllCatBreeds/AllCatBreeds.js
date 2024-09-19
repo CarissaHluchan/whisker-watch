@@ -49,7 +49,7 @@ function AllCatBreeds({ allCatBreeds }) {
     );
 }
 
-AllCatBreeds.PropTypes = {
+AllCatBreeds.propTypes = {
     allCatBreeds: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.string.isRequired,
