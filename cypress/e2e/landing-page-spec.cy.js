@@ -73,7 +73,28 @@ describe('landing-page-spec', () => {
           .should('have.css', 'font-weight', '700')
           .should('have.css', 'text-decoration-line', 'underline');
       });
-
   });
 
+  it('Should be able to navigate to all cat breeds page from nav menu', () => {
+    cy.get('.menu-png').realHover({ position: "topLeft" });
+    cy.get('[href="/allCatBreeds"]').should('be.visible');
+    cy.get('[href="/allCatBreeds"]').click();
+    cy.url().should('include', '/allCatBreeds');
+    cy.get('.all-cat-breed-container').should('be.visible');
+ 
+  });
+
+  it('Should be able to navigate to Favorite Cat Breeds from the nav menu', () => {
+    cy.get('.menu-png').realHover({ position: "topLeft" });
+    cy.get('[href="/favoriteCatbreeds"]').should('be.visible');
+    cy.get('[href="/favoriteCatbreeds"]').click();
+    cy.url().should('include', '/favoriteCatbreeds')
+    cy.get('.favorite-cat-breed-main').should('be.visible')
+  });
+
+  it ('Should be able to naviaget to favorites from the button', () => {
+    cy.get('.my-favorite-cats-button').click();
+    cy.get('[href="/favoriteCatbreeds"]').should('be.visible')
+    cy.get('.favorite-cat-breed-main').should('be.visible')
+  });
 });
