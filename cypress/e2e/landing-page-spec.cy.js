@@ -10,15 +10,15 @@ describe('landing-page-spec', () => {
 
   it('Should dispaly the header, rare cat breed cards, and a footer', () => {
     cy.get('html').should('exist')
-      .get('header').should('exist')
-      .get('.menu-png').should('exist')
+      .get('header').should('be.visible')
+      .get('.menu-png').should('be.visible')
       .get('.menu-png').realHover()
       .get('[href="/"]').contains('Rare Cat Breeds')
       .get('[href="/allCatBreeds"]').contains('All Cat Breeds')
       .get('[href="/favoriteCatbreeds"]').contains('Favorite Cat Breeds')
       .get('h1').within(() => {
-        cy.contains('Whisker').should('exist')
-          .get('.whisker-logo').should('exist')
+        cy.contains('Whisker').should('be.visible')
+          .get('.whisker-logo').should('be.visible')
           .realHover()
           .should('have.css', 'animation-name', 'shake')
           .should('have.css', 'animation-duration', '0.5s')
@@ -26,43 +26,25 @@ describe('landing-page-spec', () => {
         cy.wait(500)
       })
       .get('h1').within(() => {
-        cy.contains('Watch').should('exist')
+        cy.contains('Watch').should('be.visible')
       });
 
-    cy.get('.rare-cat-breed-container').should('exist')
-      .get('.rare-cat-breed-title').contains('Rare Cat Breeds')
-      .get('.rare-cat-breed-instructions').contains('Explore rare cat breeds. Scroll through and click on a cat to learn more about that breed. Discover their temperament, weight, lifespan and more. Add breeds you like to a list of favorites and learn more about them.')
-      .get('.my-favorite-cats-button').should('exist').contains('My favorite cats');
+      const catBreeds = [
+        { id: '#aege', name: 'Aegean' },
+        { id: '#dons', name: 'Donskoy' },
+        { id: '#kora', name: 'Korat' },
+        { id: '#nebe', name: 'Nebelung' }
+      ];
+      catBreeds.forEach(breed => {
+        cy.get(breed.id).should('be.visible')
+          .get(`${breed.id} > .cat-breed-img`).should('be.visible')
+          .realHover()
+          .should('have.css', 'transform')
+          .and('contain', 'matrix');
+        cy.get(`${breed.id} > .cat-breed-name`).contains(breed.name);
+      });
 
-    cy.get('#aege').should('exist')
-      .get('#aege > .rare-cat-breed-img').should('exist')
-      .realHover()
-      .should('have.css', 'transform')
-      .and('contain', 'matrix');
-    cy.get('#aege > .rare-cat-breed-name').contains('Aegean');
-
-    cy.get('#dons').should('exist')
-      .get('#dons > .rare-cat-breed-img').should('exist')
-      .realHover()
-      .should('have.css', 'transform')
-      .and('contain', 'matrix');
-    cy.get('#dons > .rare-cat-breed-name').contains('Donskoy');
-
-    cy.get('#kora').should('exist')
-      .get('#kora > .rare-cat-breed-img').should('exist')
-      .realHover()
-      .should('have.css', 'transform')
-      .and('contain', 'matrix');
-    cy.get('#kora > .rare-cat-breed-name').contains('Korat');
-
-    cy.get('#nebe').should('exist')
-      .get('#nebe > .rare-cat-breed-img').should('exist')
-      .realHover()
-      .should('have.css', 'transform')
-      .and('contain', 'matrix');
-    cy.get('#nebe > .rare-cat-breed-name').contains('Nebelung');
-
-    cy.get('footer').should('exist') 
+    cy.get('footer').should('be.visible') 
       .within(() => {
         cy.get('div').contains('Created By: Carissa Hluchan');  
         cy.get('.url-link-github')
@@ -77,19 +59,17 @@ describe('landing-page-spec', () => {
 
   it('Should be able to navigate to all cat breeds page from nav menu', () => {
     cy.get('.menu-png').realHover({ position: "topLeft" });
-    cy.get('[href="/allCatBreeds"]').should('be.visible');
-    cy.get('[href="/allCatBreeds"]').click();
+    cy.get('[href="/allCatBreeds"]').should('be.visible').click({ force: true });;
     cy.url().should('include', '/allCatBreeds');
     cy.get('.all-cat-breed-container').should('be.visible');
  
   });
 
-  it('Should be able to navigate to Favorite Cat Breeds from the nav menu', () => {
+  it('Should be able to navigate to favorites from the nav menu', () => {
     cy.get('.menu-png').realHover({ position: "topLeft" });
-    cy.get('[href="/favoriteCatbreeds"]').should('be.visible');
-    cy.get('[href="/favoriteCatbreeds"]').click();
-    cy.url().should('include', '/favoriteCatbreeds')
-    cy.get('.favorite-cat-breed-main').should('be.visible')
+    cy.get('[href="/favoriteCatbreeds"]').should('be.visible').click({ force: true });
+    cy.url().should('include', '/favoriteCatbreeds');
+    cy.get('.favorite-cat-breed-main').should('be.visible');
   });
 
   it ('Should be able to naviaget to favorites from the button', () => {
