@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import CatBreedCard from '../CatBreedCard/CatBreedCard';
 import { useNavigate } from 'react-router-dom';
 import './RareCatBreeds.css';
@@ -45,5 +46,17 @@ function RareCatBreeds({ rareCatBreeds }) {
         </main>
     )
 }
+
+RareCatBreeds.propTypes = {
+    rareCatBreeds: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.string.isRequired,
+            name: PropTypes.string.isRequired,
+            image: PropTypes.shape({
+                url: PropTypes.string.isRequired,
+            }).isRequired,
+        }).isRequired
+    ).isRequired,
+};
 
 export default RareCatBreeds;

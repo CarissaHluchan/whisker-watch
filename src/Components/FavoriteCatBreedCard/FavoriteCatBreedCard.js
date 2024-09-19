@@ -17,11 +17,11 @@ function FavoriteCatBreedCard({ id, name, image, removeFromFavoriteCatBreeds }) 
     )
 }
 
-export default FavoriteCatBreedCard;
-
 FavoriteCatBreedCard.propTypes = {
     image: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    id: PropTypes.string,
-    removeFromFavoriteCatBreeds: PropTypes.func 
-}
+    id: PropTypes.string.isRequired,
+    removeFromFavoriteCatBreeds: PropTypes.func.isRequired
+};
+
+export default FavoriteCatBreedCard;

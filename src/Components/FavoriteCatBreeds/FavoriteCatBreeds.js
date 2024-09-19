@@ -1,4 +1,6 @@
+import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
+
 import './FavoriteCatBreeds.css';
 import defaultCatImage from '../../assets/default-cat.png';
 import FavoriteCatBreedCard from '../FavoriteCatBreedCard/FavoriteCatBreedCard';
@@ -38,5 +40,18 @@ function FavoriteCatBreeds({ favoriteCatBreeds = [], removeFromFavoriteCatBreeds
         </main>
     );
 }
+
+FavoriteCatBreeds.protoType = {
+    favoriteCatBreeds: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.string.isRequired,
+            name: PropTypes.string.isRequired,
+            image: PropTypes.shape({
+                url: PropTypes.string
+            })
+        })
+    ).isRequired,
+    removeFromFavoriteCatBreeds: PropTypes.func.isRequired
+};
 
 export default FavoriteCatBreeds;

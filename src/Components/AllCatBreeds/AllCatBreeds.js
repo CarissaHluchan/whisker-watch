@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 
 import './AllCatBreeds.css';
@@ -48,5 +49,16 @@ function AllCatBreeds({ allCatBreeds }) {
     );
 }
 
+AllCatBreeds.PropTypes = {
+    allCatBreeds: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.string.isRequired,
+            name: PropTypes.string.isRequired,
+            image: PropTypes.shape({
+                url: PropTypes.string.isRequired,
+            }).isRequired,
+        }).isRequired
+    ).isRequired,
+};
 
 export default AllCatBreeds;

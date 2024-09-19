@@ -233,16 +233,14 @@ function SingleCatBreed({ allCatBreeds, addToFavoriteCatBreeds }) {
     )
 }
 
-export default SingleCatBreed;
-
 SingleCatBreed.propTypes = {
-    allCatBreeds: [
-        {
-            weight: {
+    allCatBreeds: PropTypes.arrayOf(
+        PropTypes.shape({
+            weight: PropTypes.shape({
                 imperial: PropTypes.string,
                 metric: PropTypes.string,
-            },
-            id: PropTypes.string,
+            }),
+            id: PropTypes.string.isRequired,
             name: PropTypes.string.isRequired,
             cfa_url: PropTypes.string,
             vetstreet_url: PropTypes.string,
@@ -272,10 +270,12 @@ SingleCatBreed.propTypes = {
             short_legs: PropTypes.number,
             wikipedia_url: PropTypes.string,
             hypoallergenic: PropTypes.number,
-            image: {
+            image: PropTypes.shape({
                 url: PropTypes.string,
-            }
-        }
-    ],
+            })
+        })
+    ).isRequired,
     addToFavoriteCatBreeds: PropTypes.func.isRequired,
-}
+};
+
+export default SingleCatBreed;

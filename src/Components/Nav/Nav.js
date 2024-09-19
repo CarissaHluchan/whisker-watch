@@ -13,8 +13,8 @@ function Nav({ setIsNavOpen}) {
     )
 }
 
-export default Nav;
-
 Nav.propTypes = {
-    setIsNavOpen: PropTypes.bool
-}
+    setIsNavOpen: PropTypes.func.isRequired
+};
+
+export default Nav;
