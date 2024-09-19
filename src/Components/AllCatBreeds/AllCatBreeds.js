@@ -55,9 +55,9 @@ AllCatBreeds.propTypes = {
             id: PropTypes.string.isRequired,
             name: PropTypes.string.isRequired,
             image: PropTypes.shape({
-                url: PropTypes.string.isRequired,
-            }).isRequired,
-        }).isRequired
+                url: PropTypes.string,
+            }),
+        })
     ).isRequired,
 };
 

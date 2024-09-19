@@ -18,7 +18,7 @@ function FavoriteCatBreedCard({ id, name, image, removeFromFavoriteCatBreeds }) 
 }
 
 FavoriteCatBreedCard.propTypes = {
-    image: PropTypes.string.isRequired,
+    image: PropTypes.string,
     name: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
     removeFromFavoriteCatBreeds: PropTypes.func.isRequired
