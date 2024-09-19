@@ -27,7 +27,7 @@ function RareCatBreeds({ rareCatBreeds }) {
         <main className='rare-cat-breed-main'>
             <div className='rare-cat-breed-header'>
                 <div className='rare-cat-breed-title-wrapper'>
-                    <h2 className='rare-cat-breed-title'>Rare Cat breeds</h2>
+                    <h2 className='rare-cat-breed-title'>Rare Cat Breeds</h2>
                     <p className='rare-cat-breed-instructions'>
                         Explore rare cat breeds.
                         Scroll through and click on a cat to learn more about that breed.
