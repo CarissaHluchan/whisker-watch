@@ -13,6 +13,12 @@ function SingleCatBreed({ allCatBreeds, addToFavoriteCatBreeds }) {
         window.scrollTo(0 , 0);
     }, [])
 
+    if (!catBreed) {
+        return (
+            <div>Cat breed is loading or could not be found.</div>
+        );
+    };
+
     const handleAddToFavorites = () => {
         addToFavoriteCatBreeds(catBreed);
         alert(`${catBreed.name} has been added to your favorites!`);
