@@ -1,31 +1,31 @@
+import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
+
 import './FavoriteCatBreeds.css';
 import defaultCatImage from '../../assets/default-cat.png';
 import FavoriteCatBreedCard from '../FavoriteCatBreedCard/FavoriteCatBreedCard';
-import { useNavigate } from 'react-router-dom';
 
 function FavoriteCatBreeds({ favoriteCatBreeds = [], removeFromFavoriteCatBreeds }) {
 
     const navigate = useNavigate();
 
-    const favoriteCatBreedCards = favoriteCatBreeds.map(breed => {
-        return (
-            <FavoriteCatBreedCard 
-                id={breed.id}
-                key={breed.id}
-                name={breed.name}
-                image={breed.image ? breed.image.url : defaultCatImage}
-                removeFromFavoriteCatBreeds={() => removeFromFavoriteCatBreeds(breed)}
-            />
-        )
-    })
-
     const handleViewRareBreeds = () => {
-        navigate('/')
+        navigate('/');
     }
 
     const handleViewAllBreeds = () => {
-        navigate('/allCatBreeds')
+        navigate('/allCatBreeds');
     }
+
+    const favoriteCatBreedCards = favoriteCatBreeds.map((breed) => (
+        <FavoriteCatBreedCard
+          id={breed.id}
+          key={breed.id}
+          name={breed.name}
+          image={breed.image ? breed.image.url : defaultCatImage}
+          removeFromFavoriteCatBreeds={() => removeFromFavoriteCatBreeds(breed)}
+        />
+      ));
 
     return (
         <main className='favorite-cat-breed-main'>
@@ -38,7 +38,20 @@ function FavoriteCatBreeds({ favoriteCatBreeds = [], removeFromFavoriteCatBreeds
                 {favoriteCatBreedCards}
             </section>
         </main>
-    )
+    );
 }
+
+FavoriteCatBreeds.protoType = {
+    favoriteCatBreeds: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.string.isRequired,
+            name: PropTypes.string.isRequired,
+            image: PropTypes.shape({
+                url: PropTypes.string
+            })
+        })
+    ).isRequired,
+    removeFromFavoriteCatBreeds: PropTypes.func.isRequired
+};
 
 export default FavoriteCatBreeds;

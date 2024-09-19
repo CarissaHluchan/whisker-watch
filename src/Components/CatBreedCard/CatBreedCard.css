@@ -33,3 +33,15 @@
     color: var(--third-color);
     font-size: 1.6rem;
 }
+
+/*----------------// brake-point //----------------*/
+@media screen and (max-width: 330px){
+    .rare-cat-breed-img {
+        width: 60vw;
+        height: auto;
+    }
+
+    .rare-cat-breed-name {
+        font-size: 1.1rem;
+    }
+}

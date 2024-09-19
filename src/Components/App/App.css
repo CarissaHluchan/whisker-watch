@@ -13,6 +13,7 @@ header {
     position: absolute;
     left: 1rem;
     width: 4rem;
+    padding: 2rem;
 }
 
 h1 {
@@ -21,7 +22,7 @@ h1 {
     font-weight: var(--title-weight);
     font-style: normal;
     font-size: 2.5rem;
-    /* border: 1px solid black; */
+    margin-right: 2rem;
 }
 
 .whisker-logo {
@@ -29,7 +30,6 @@ h1 {
     width: 11rem;
     margin-left: 5px;
     margin-right: 5px;
-    /* border: 1px solid black; */
 }
 
 .see-all-cat-breed-button {
@@ -64,4 +64,65 @@ footer {
     align-items: center;
     padding: 1.6rem;
     border: 2px solid var(--second-color);
+}
+
+.url-link-github {
+    margin: 0.3rem;
+}
+
+.url-link-github:hover {
+    color: var(--fith-color);
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+/*--------------------// brake-points //---------------------*/
+@media screen and (max-width: 770px) {
+    header {
+        justify-content: space-around;
+    }
+
+    .menu-png {
+        position: relative;
+        left: 0;
+        width: 3.5rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .whisker-logo  {
+        width: 13rem;
+    }
+}
+
+@media screen and (max-width: 683px) {
+    h1 {
+        font-size: 2rem;
+    } 
+
+    .whisker-logo  {
+        width: 8rem;
+    }
+}
+
+
+@media screen and (max-width: 540px) {
+    h1 {
+        font-size: 2.5rem;
+        display: flex;
+        position: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header  {
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    .whisker-logo  {
+        width: 10rem;
+    }
 }

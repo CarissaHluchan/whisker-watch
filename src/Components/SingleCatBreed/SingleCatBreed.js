@@ -1,5 +1,7 @@
-import './SingleCatBreed.css';
+import PropTypes from 'prop-types';
 import { useParams, useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+import './SingleCatBreed.css';
 
 function SingleCatBreed({ allCatBreeds, addToFavoriteCatBreeds }) {
 
@@ -7,22 +9,20 @@ function SingleCatBreed({ allCatBreeds, addToFavoriteCatBreeds }) {
     const catBreed = allCatBreeds.find(catBreed => catBreed.id === id);
     const navigate = useNavigate();
 
+    useEffect(() => {
+        window.scrollTo(0 , 0);
+    }, [])
+
     const handleAddToFavorites = () => {
-        addToFavoriteCatBreeds(catBreed); 
+        addToFavoriteCatBreeds(catBreed);
         alert(`${catBreed.name} has been added to your favorites!`);
     };
 
-    const handleViewAllBreeds = () => {
-        navigate('/allCatBreeds')
-    }
+    const handleViewAllBreeds = () => navigate('/allCatBreeds');
 
-    const handleViewRareBreeds = () => {
-        navigate('/')
-    }
+    const handleViewRareBreeds = () => navigate('/');
 
-    const handleViewFavorites = () => {
-        navigate('/favoriteCatbreeds')
-    }
+    const handleViewFavorites = () => navigate('/favoriteCatbreeds');
 
     const convertTrait = (trait) => trait === 0 ? 'No' : 'Yes';
 
@@ -35,12 +35,20 @@ function SingleCatBreed({ allCatBreeds, addToFavoriteCatBreeds }) {
             </div>
             <div className='single-cat-all-wrapper'>
                 <div className='add-to-favorites-button-wrapper'>
-                    <button className='add-to-favorites-button' onClick={handleAddToFavorites}>Add Breed to Favorites</button>
+                    <button
+                        className='add-to-favorites-button'
+                        onClick={handleAddToFavorites}
+                    >
+                        Add Breed to Favorites
+                    </button>
                 </div>
                 <h3 className='single-cat-breed-name'>{catBreed.name}</h3>
 
                 <div className='single-cat-img-des-wrapper'>
-                    <img className='single-cat-breed-image' src={catBreed.image.url} />
+                    <img
+                        className='single-cat-breed-image'
+                        src={catBreed.image.url}
+                    />
                     <div className='description-wrapper'>
                         <div className='single-cat-content-title'>Description</div>
                         <div className='single-cat-content'>{catBreed.description}</div>
@@ -50,7 +58,7 @@ function SingleCatBreed({ allCatBreeds, addToFavoriteCatBreeds }) {
 
                 <div className='termperament-wrapper'>
                     <div className='single-cat-content-title'>Temperament</div>
-                    <div className='single-cat-content'>{catBreed.temperament}</div>
+                    <div className='single-cat-content-temperment'>{catBreed.temperament}</div>
                 </div>
 
                 <div className='wrapper-weight-lifespan-country'>
@@ -137,7 +145,8 @@ function SingleCatBreed({ allCatBreeds, addToFavoriteCatBreeds }) {
                 <div className='all-traites-wrapper'>
                     <div className='traites-wrapper'>
                         <div className='trait-wrapper'>
-                            <div className='trait-content-title'>Experimental</div>
+                            <div className='trait-content-title'>Experimental
+                            </div>
                             <div className='trait-content'>{convertTrait(catBreed.experimental)}</div>
                         </div>
                         <div className='trait-wrapper'>
@@ -177,15 +186,96 @@ function SingleCatBreed({ allCatBreeds, addToFavoriteCatBreeds }) {
 
                 <div className='other-traits-content-title '>More Information</div>
                 <div className='traites-wrapper'>
-                    <a href={catBreed.cfa_url} target="_blank" rel="noopener noreferrer" className='url-links'>CFA</a>
-                    <a href={catBreed.vetstreet_url} target="_blank" rel="noopener noreferrer" className='url-links'>Vetstreet</a>
-                    <a href={catBreed.vcahospitals_url} target="_blank" rel="noopener noreferrer" className='url-links'>VCA Hospitals</a>
-                    <a href={catBreed.wikipedia_url} target="_blank" rel="noopener noreferrer" className='url-links bottom'>Wikipedia</a>
+                    {catBreed.cfa_url && (
+                        <a
+                            href={catBreed.cfa_url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className='url-links'
+                        >
+                            Cat Fanciers's Association
+                        </a>
+                    )}
+                    {catBreed.vetstreet_url && (
+                        <a
+                            href={catBreed.vetstreet_url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className='url-links'
+                        >
+                            Vetstreet
+                        </a>
+                    )}
+                    {catBreed.vcahospitals_url && (
+                        <a
+                            href={catBreed.vcahospitals_url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className='url-links'
+                        >
+                            VCA Hospitals
+                        </a>
+                    )}
+                    {catBreed.wikipedia_url && (
+                        <a
+                            href={catBreed.wikipedia_url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className='url-links bottom'
+                        >
+                            Wikipedia
+                        </a>
+                    )}
                 </div>
 
             </div>
         </section>
     )
 }
+
+SingleCatBreed.propTypes = {
+    allCatBreeds: PropTypes.arrayOf(
+        PropTypes.shape({
+            weight: PropTypes.shape({
+                imperial: PropTypes.string,
+                metric: PropTypes.string,
+            }),
+            id: PropTypes.string.isRequired,
+            name: PropTypes.string.isRequired,
+            cfa_url: PropTypes.string,
+            vetstreet_url: PropTypes.string,
+            vcahospitals_url: PropTypes.string,
+            temperament: PropTypes.string,
+            origin: PropTypes.string,
+            description: PropTypes.string,
+            life_span: PropTypes.string,
+            adaptability: PropTypes.number,
+            affection_level: PropTypes.number,
+            child_friendly: PropTypes.number,
+            dog_friendly: PropTypes.number,
+            energy_level: PropTypes.number,
+            grooming: PropTypes.number,
+            health_issues: PropTypes.number,
+            intelligence: PropTypes.number,
+            shedding_level: PropTypes.number,
+            social_needs: PropTypes.number,
+            stranger_friendly: PropTypes.number,
+            vocalisation: PropTypes.number,
+            experimental: PropTypes.number,
+            hairless: PropTypes.number,
+            natural: PropTypes.number,
+            rare: PropTypes.number,
+            rex: PropTypes.number,
+            suppressed_tail: PropTypes.number,
+            short_legs: PropTypes.number,
+            wikipedia_url: PropTypes.string,
+            hypoallergenic: PropTypes.number,
+            image: PropTypes.shape({
+                url: PropTypes.string,
+            })
+        })
+    ).isRequired,
+    addToFavoriteCatBreeds: PropTypes.func.isRequired,
+};
 
 export default SingleCatBreed;

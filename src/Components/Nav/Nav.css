@@ -1,7 +1,7 @@
 nav {
     position: absolute;
     top: 2rem;
-    left: 5.5rem;
+    left: 3.5rem;
     display: flex;
     flex-direction: column;
     align-content: flex-start;
@@ -15,5 +15,4 @@ nav {
     color: white;
     background-color: var(--nav-color);
     padding: 0.4rem;
-    /* border: 1px solid var(--third-color); */
 }
