@@ -38,7 +38,7 @@ This solo project took me roughly 8 days or 32 hours to complete. I am in the 15
 
 ### Contributors:
 [//]: <> (Who worked on this application? Link to their GitHubs.)
-This application was built by:[Carissa Hluchan](https://github.com/CarissaHluchan),
+This application was built by: [Carissa Hluchan](https://github.com/CarissaHluchan)
 
 ### Learning Goals:
 [//]: <> (What were the learning goals of this project? What tech did you work with?)
