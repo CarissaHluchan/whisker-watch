@@ -17,11 +17,11 @@ Whisker Watch is a charming web application designed for cat breed enthusiasts w
 1. Click the Title to run the app.
 2. Install Cypress
 [Follow these instructions to install Cypress.](https://on.cypress.io/guides/installing-and-running#section-installing)
-3. > [!WARNING]
+> [!WARNING]
 > **[Node.js](https://nodejs.org/en), [npm](https://www.npmjs.com/) & a [locally running API](https://github.com/turingschool-examples/overlook-api) are required to run this app.**<br>
 > _Please ensure you have both installed on your machine before proceeding._
 
-- _(optional) Fork this project to your own Github account._
+3. _(optional) Fork this project to your own Github account._
 - Clone the repository to your local machine.
 - `cd` into the project folder.
 - Use the `npm install` command to install the project dependencies.
@@ -56,5 +56,10 @@ This application was built by:[Carissa Hluchan](https://github.com/CarissaHlucha
 
 ### Wins + Challenges:
 [//]: <> (What are 2-3 wins you have from this project? What were some challenges you faced - and how did you get over them?)
+Dynamic UI Testing with Cypress
+- Testing dynamic elements, such as navigation menus and asynchronously loaded components, presented challenges with visibility and timing in Cypress. I resolved this by strategically breaking up test assertions and using cy.realHover and cy.intercept to handle asynchronous rendering and API calls.
+
+API Data Handling in Tests
+- Mocking and intercepting API requests required careful synchronization to ensure the UI was updated correctly during testing. By using Cypress fixtures and     ensuring API responses matched expected structures, I stabilized the tests and ensured data was correctly loaded before user interactions.
 
 
