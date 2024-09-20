@@ -31,5 +31,11 @@ describe('allCatBreeds-spec', () => {
         .and('contain', 'matrix');
       cy.get(`${breed.id} > .cat-breed-name`).contains(breed.name);
     });
-  })
-})
+  });
+
+  it('Should be able to navigate to favorites from the button', () => {
+    cy.get('.my-favorite-cats-button').click();
+    cy.url().should('include', '/favoriteCatbreeds');
+    cy.get('.favorite-cat-breed-main').should('be.visible');
+  });
+});

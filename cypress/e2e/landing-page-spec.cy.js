@@ -72,9 +72,14 @@ describe('landing-page-spec', () => {
     cy.get('.favorite-cat-breed-main').should('be.visible');
   });
 
-  it ('Should be able to naviaget to favorites from the button', () => {
+  it('Should be able to navigate to favorites from the button', () => {
     cy.get('.my-favorite-cats-button').click();
-    cy.get('[href="/favoriteCatbreeds"]').should('be.visible')
-    cy.get('.favorite-cat-breed-main').should('be.visible')
+    cy.url().should('include', '/favoriteCatbreeds');
+    cy.get('.favorite-cat-breed-main').should('be.visible');
   });
+
+  it('Should be able to navigate to the Sinngle Breed view displaying the breed selected', () => {
+    cy.get('#aege').click();
+    cy.get('.sinlge-cat-section').should('be.visible')
+  })
 });
