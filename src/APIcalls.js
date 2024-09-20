@@ -9,7 +9,6 @@ export async function getCats() {
       throw err
     }
     const data = await response.json();
-    console.log(data, 'GET DATA'); 
     return data; 
   } catch (error) {
     console.error('ERROR FETCHING DATA:', error.message);
