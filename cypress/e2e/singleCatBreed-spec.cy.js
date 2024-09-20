@@ -96,4 +96,31 @@ describe('singleCatBreed-spec', () => {
       .should('have.css', 'font-weight', '700')
       .should('have.css', 'text-decoration-line', 'underline');
   });
+
+  it('Should be able to navigate to All Breeds from the button', () => {
+    cy.get('.single-breed-button-wrapper > :nth-child(1)').contains('All Breeds')
+      .click();
+    cy.get('.all-cat-breed-container').should('be.visible');
+  });
+
+  it('Should be able to navigate to Rare Breeds from the button', () => {
+    cy.get('.single-breed-button-wrapper > :nth-child(2)').contains('Rare Breeds')
+      .click();
+    cy.get('.rare-cat-breed-container').should('be.visible');
+  });
+
+  it('Should be able add the Breed to a users list of favorites', () => {
+    cy.get('.add-to-favorites-button').contains('Add Breed to Favorites')
+      .click();
+    cy.on('window:alert', (alertMessage) => {
+      expect(alertMessage).to.equal('Aegean has been added to your favorites!');
+    });
+  });
+
+  it('Should be able to navigate to Favorite Breeds from the button', () => {
+    cy.get('.single-breed-button-wrapper > :nth-child(3)').contains('My Favorite Breeds')
+    .click();
+    cy.get('.favorite-cat-breed-main').should('be.visible');
+  });
+
 });
