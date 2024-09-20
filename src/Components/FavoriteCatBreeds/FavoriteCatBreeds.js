@@ -30,8 +30,8 @@ function FavoriteCatBreeds({ favoriteCatBreeds = [], removeFromFavoriteCatBreeds
     return (
         <main className='favorite-cat-breed-main'>
             <div className='nav-button-wrapper'>
-                <button onClick={handleViewRareBreeds}>Rare Breeds</button>
                 <button onClick={handleViewAllBreeds}>All Breeds</button>
+                <button onClick={handleViewRareBreeds}>Rare Breeds</button>
             </div>
             <h2 className='favorite-cat-breed-title'>My Favorite Cat Breeds</h2>
             <section className='favorite-cat-breed-container'>

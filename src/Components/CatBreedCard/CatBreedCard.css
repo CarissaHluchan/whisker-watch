@@ -1,4 +1,4 @@
-.rare-cat-breed-card-wrapper {
+.cat-breed-card-wrapper {
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -12,11 +12,11 @@
     margin: 1rem;
 }
 
-.rare-cat-breed-card-wrapper:hover {
+.cat-breed-card-wrapper:hover {
     cursor: pointer;
 }
 
-.rare-cat-breed-img {
+.cat-breed-img {
     position: relative;
     top: .5rem;
     height: 10rem;
@@ -25,23 +25,23 @@
     transition: transform 0.3s ease-in-out
 }
 
-.rare-cat-breed-img:hover {
+.cat-breed-img:hover {
     transform: scale(1.1);
 }
 
-.rare-cat-breed-name {
+.cat-breed-name {
     color: var(--third-color);
     font-size: 1.6rem;
 }
 
 /*----------------// brake-point //----------------*/
 @media screen and (max-width: 330px){
-    .rare-cat-breed-img {
+    .cat-breed-img {
         width: 60vw;
         height: auto;
     }
 
-    .rare-cat-breed-name {
+    .cat-breed-name {
         font-size: 1.1rem;
     }
 }
