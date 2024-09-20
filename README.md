@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# <picture><source srcset="https://fonts.gstatic.com/s/e/notoemoji/latest/1f63a/512.webp" type="image/webp"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f63a/512.gif" alt="😺" width="32" height="32"></picture>[ Whisker Watch ](https://whisker-watch.vercel.app/)<picture><source srcset="https://fonts.gstatic.com/s/e/notoemoji/latest/1f63a/512.webp" type="image/webp"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f63a/512.gif" alt="😺" width="32" height="32"></picture>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Abstract:
+[//]: <> (Briefly describe what you built and its features. What problem is the app solving? How does this application solve that problem?)
+Whisker Watch is a charming web application designed for cat breed enthusiasts with a particular interest in rare and unusual cat breeds. This interactive platform offers a delightful experience for users who want to explore and celebrate these unique feline companions.
 
-## Available Scripts
+### Technology:
+[//]: <> (Add technology you used for this project.) 
+1. React
+2. React Router
+3. Asynchronous JavaScript
+4. Cypress
+5. CSS
 
-In the project directory, you can run:
+### Installation Instructions:
+[//]: <> (What steps does a person have to take to get your app cloned down and running?)
+1. Click the Title to run the app.
+2. Install Cypress
+[Follow these instructions to install Cypress.](https://on.cypress.io/guides/installing-and-running#section-installing)
+3. > [!WARNING]
+> **[Node.js](https://nodejs.org/en), [npm](https://www.npmjs.com/) & a [locally running API](https://github.com/turingschool-examples/overlook-api) are required to run this app.**<br>
+> _Please ensure you have both installed on your machine before proceeding._
 
-### `npm start`
+- _(optional) Fork this project to your own Github account._
+- Clone the repository to your local machine.
+- `cd` into the project folder.
+- Use the `npm install` command to install the project dependencies.
+- Use the `npm start` command to run webpack.
+- Check the console for the `PORT` and copy/paste `localhost:PORT` into your web browser.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Preview of App:
+[//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
+![Whisker-Watch-preview](https://github.com/user-attachments/assets/02289c9c-0d35-4857-b028-379489e83164)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Context:
+[//]: <> (Give some context for the project here. How long did you have to work on it? How far into the Turing program are you?)
+This solo project took me roughly 8 days or 32 hours to complete. I am in the 15th week of intensive front-end web development training program.
 
-### `npm test`
+### Contributors:
+[//]: <> (Who worked on this application? Link to their GitHubs.)
+This application was built by:[Carissa Hluchan](https://github.com/CarissaHluchan),
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Learning Goals:
+[//]: <> (What were the learning goals of this project? What tech did you work with?)
+- Demonstrate knowlegde of the following: React, Router, Asynchronous JavaScript, End to end testing with Cypress.
+- Create personas and user stories to describe the target audience.
+- Work within constraints to deliver a product for the niche audience, which helps solve a problem unique to them.
+- Have the following core functionality:
+  - Display the data from the API in a way that applies directly to your audience
+  - Ability for users to store/manipulate the data displayed in the application
+  - Multiple views handled by Router
+  - Be deployed using Vercel
+  - PropTypes has been implemented in all components with props
+  - App is responsive across mobile, tablet and desktop sizes
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Wins + Challenges:
+[//]: <> (What are 2-3 wins you have from this project? What were some challenges you faced - and how did you get over them?)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
