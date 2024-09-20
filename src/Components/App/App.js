@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 
 import './App.css';
 import whiskerLogo from '../../assets/Whisker-Watch.png';
@@ -9,6 +9,7 @@ import RareCatBreeds from '../RareCatBreeds/RareCatBreeds';
 import AllCatBreeds from '../AllCatBreeds/AllCatBreeds';
 import SingleCatBreed from '../SingleCatBreed/SingleCatBreed';
 import FavoriteCatBreeds from '../FavoriteCatBreeds/FavoriteCatBreeds';
+import ErrorPage from '../ErrorPage/ErrorPage';
 import { getCats } from '../../APIcalls';
 
 function App() {
@@ -16,24 +17,26 @@ function App() {
   const [allCatBreeds, setAllCatBreeds] = useState([]);
   const [favoriteCatBreeds, setFavoriteCatBreeds] = useState([]);
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchCatBreeds = async () => {
       try {
         const data = await getCats();
         const rareBreeds = data.filter(breed =>
-          breed.rare === 1 || 
+          breed.rare === 1 ||
           (breed.description && breed.description.toLowerCase().includes('rare'))
         );
         setRareCatBreeds(() => rareBreeds);
         setAllCatBreeds(() => data);
       } catch (err) {
         console.error("Error fetching rare cat breeds from APP:", err);
+        navigate(`/error/${err.statusCode || 500}`, { state: { message: err.message || 'An unexpected error occurred.' } });
       }
     };
 
     fetchCatBreeds();
-  }, []); 
+  }, [navigate]);
 
   const addToFavoriteCatBreeds = (newFavoriteCatBreed) => {
     setFavoriteCatBreeds(prevFavorites => {
@@ -61,7 +64,7 @@ function App() {
           onMouseLeave={() => setIsNavOpen(false)}
         />
         {isNavOpen && <Nav setIsNavOpen={setIsNavOpen} />}
-        <h1>Whisker<img src={whiskerLogo} alt='Logo' className='whisker-logo'/>Watch</h1>
+        <h1>Whisker<img src={whiskerLogo} alt='Logo' className='whisker-logo' />Watch</h1>
       </header>
 
       <Routes>
@@ -75,12 +78,14 @@ function App() {
         />
         <Route
           path='/catBreed/:id'
-          element={<SingleCatBreed allCatBreeds={allCatBreeds} addToFavoriteCatBreeds={addToFavoriteCatBreeds}/>}
+          element={<SingleCatBreed allCatBreeds={allCatBreeds} addToFavoriteCatBreeds={addToFavoriteCatBreeds} />}
         />
         <Route
           path='/favoriteCatbreeds'
-          element={<FavoriteCatBreeds favoriteCatBreeds={favoriteCatBreeds} removeFromFavoriteCatBreeds={removeFromFavoriteCatBreeds}/>}
+          element={<FavoriteCatBreeds favoriteCatBreeds={favoriteCatBreeds} removeFromFavoriteCatBreeds={removeFromFavoriteCatBreeds} />}
         />
+        <Route path='/error/:code' element={<ErrorPage />}></Route>
+        <Route path='*' element={<ErrorPage error={404} />}></Route>
       </Routes>
 
       <footer>
