@@ -46,7 +46,7 @@ This application was built by: [Carissa Hluchan](https://github.com/CarissaHluch
 - Create personas and user stories to describe the target audience.
 - Work within constraints to deliver a product for the niche audience, which helps solve a problem unique to them.
 - Have the following core functionality:
-  - Display the data from the API in a way that applies directly to your audience
+  - Display the data from the API in a way that applies directly to the audience
   - Ability for users to store/manipulate the data displayed in the application
   - Multiple views handled by Router
   - Be deployed using Vercel
@@ -57,7 +57,8 @@ This application was built by: [Carissa Hluchan](https://github.com/CarissaHluch
 ### Wins + Challenges:
 [//]: <> (What are 2-3 wins you have from this project? What were some challenges you faced - and how did you get over them?)
 Dynamic UI Testing with Cypress
-- Testing dynamic elements, such as navigation menus and asynchronously loaded components, presented challenges with visibility and timing in Cypress. I resolved this by strategically breaking up test assertions and using cy.realHover and cy.intercept to handle asynchronous rendering and API calls.
+- Testing dynamic elements, such as navigation menus and asynchronously loaded components, presented challenges with visibility and timing in Cypress. I resolved this by breaking up test assertions and using cy.realHover and cy.intercept to handle asynchronous rendering and API calls.
+- discovered a dynamic way of handing cat breed cards visablity using forEach in Cypress.
 
 API Data Handling in Tests
 - Mocking and intercepting API requests required careful synchronization to ensure the UI was updated correctly during testing. By using Cypress fixtures and     ensuring API responses matched expected structures, I stabilized the tests and ensured data was correctly loaded before user interactions.
