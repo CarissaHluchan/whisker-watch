@@ -20,11 +20,10 @@ Whisker Watch is a charming web application designed for cat breed enthusiasts w
 ### Installation Instructions:
 [//]: <> (What steps does a person have to take to get your app cloned down and running?)
 1. Click the Title to run the app.
-  > [!WARNING]
-  > **[Node.js](https://nodejs.org/en), [npm](https://www.npmjs.com/) & a [locally running API](https://github.com/turingschool-examples/overlook-api) are required to run this app.**<br>
-  > _Please ensure you have both installed on your machine before proceeding._
-
 2. _(optional) Fork this project to your own Github account._
+> [!WARNING]
+> **[Node.js](https://nodejs.org/en), [npm](https://www.npmjs.com/) & a [locally running API](https://github.com/turingschool-examples/overlook-api) are required to run this app.**<br>
+  > _Please ensure you have both installed on your machine before proceeding._
   - Clone the repository to your local machine.
   - `cd` into the project folder.
   - Use the `npm install` command to install the project dependencies.
