@@ -22,7 +22,7 @@ Whisker Watch is a charming web application designed for cat breed enthusiasts w
 1. Click the Title to run the app.
 2. _(optional) Fork this project to your own Github account._
 > [!WARNING]
-> **[Node.js](https://nodejs.org/en), [npm](https://www.npmjs.com/) & a [locally running API](https://github.com/turingschool-examples/overlook-api) are required to run this app.**<br>
+> **[Node.js](https://nodejs.org/en), [npm](https://www.npmjs.com/) are required to run this app.**<br>
   > _Please ensure you have both installed on your machine before proceeding._
   - Clone the repository to your local machine.
   - `cd` into the project folder.
@@ -30,6 +30,8 @@ Whisker Watch is a charming web application designed for cat breed enthusiasts w
   - Use the `npm start` command to run webpack.
   - Check the console for the `PORT` and copy/paste `localhost:PORT` into your web browser.
 3. If you fork this repo you will need to request an API key.
+> [!WARNING]
+> **[The Cat API](https://thecatapi.com/), [Request for API Key](https://thecatapi.com/#pricing) are required to run this app.**<br>
   - you can request the API key for free here: [The Cat API](https://thecatapi.com/#pricing)
   - create a .env file in the root directory
   - label it `REACT_APP_CAT_API_KEY=(your API key here)`
