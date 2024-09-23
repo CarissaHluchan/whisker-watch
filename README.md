@@ -15,7 +15,7 @@ Whisker Watch is a charming web application designed for cat breed enthusiasts w
 ### Design:
 [Design Board](https://miro.com/app/board/uXjVLf8mZcs=/)
 
-<img width="662" alt="Screenshot 2024-09-20 at 6 06 42 PM" src="https://github.com/user-attachments/assets/f17de73a-68c8-4756-b135-55b2d2f20b26">
+<img width="676" alt="Screenshot 2024-09-23 at 4 18 32 PM" src="https://github.com/user-attachments/assets/efaec161-a9fc-476d-8319-c78059e14c96">
 
 ### Installation Instructions:
 [//]: <> (What steps does a person have to take to get your app cloned down and running?)
