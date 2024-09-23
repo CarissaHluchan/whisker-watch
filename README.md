@@ -23,7 +23,7 @@ Whisker Watch is a charming web application designed for cat breed enthusiasts w
 2. _(optional) Fork this project to your own Github account._
 > [!WARNING]
 > **[Node.js](https://nodejs.org/en), [npm](https://www.npmjs.com/) are required to run this app.**<br>
-  > _Please ensure you have both installed on your machine before proceeding._
+> _Please ensure you have both installed on your machine before proceeding._
   - Clone the repository to your local machine.
   - `cd` into the project folder.
   - Use the `npm install` command to install the project dependencies.
@@ -31,10 +31,10 @@ Whisker Watch is a charming web application designed for cat breed enthusiasts w
   - Check the console for the `PORT` and copy/paste `localhost:PORT` into your web browser.
 3. If you fork this repo you will need to request an API key.
 > [!WARNING]
-> **[The Cat API](https://thecatapi.com/), [Request for API Key](https://thecatapi.com/#pricing) are required to run this app.**<br>
-  - you can request the API key for free here: [The Cat API](https://thecatapi.com/#pricing)
+> **You will need [The Cat API](https://thecatapi.com/) to run this app. [Request an API Key here](https://thecatapi.com/#pricing)**<br>
+> _Please ensure you have an API key to see a working app._
   - create a .env file in the root directory
-  - label it `REACT_APP_CAT_API_KEY=(your API key here)`
+  - Enter code: `REACT_APP_CAT_API_KEY=(your API key here)`
 4. To run Cypress testing
 - in the console type `npm run cypress`
 - for issues: [Follow these instructions to install Cypress.](https://on.cypress.io/guides/installing-and-running#section-installing)
