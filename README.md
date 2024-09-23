@@ -12,15 +12,11 @@ Whisker Watch is a charming web application designed for cat breed enthusiasts w
 4. Cypress
 5. CSS
 
-### Design:
-[Design Board](https://miro.com/app/board/uXjVLf8mZcs=/)
-
-<img width="676" alt="Screenshot 2024-09-23 at 4 18 32 PM" src="https://github.com/user-attachments/assets/efaec161-a9fc-476d-8319-c78059e14c96">
-
 ### Installation Instructions:
 [//]: <> (What steps does a person have to take to get your app cloned down and running?)
-1. Click the Title to run the app.
-2. _(optional) Fork this project to your own Github account._
+**1. Click the Title to run the app.**
+
+**2. _(optional) Fork this project to your own Github account._**
 > [!WARNING]
 > **[Node.js](https://nodejs.org/en), [npm](https://www.npmjs.com/) are required to run this app.**<br>
 > _Please ensure you have both installed on your machine before proceeding._
@@ -29,15 +25,22 @@ Whisker Watch is a charming web application designed for cat breed enthusiasts w
   - Use the `npm install` command to install the project dependencies.
   - Use the `npm start` command to run webpack.
   - Check the console for the `PORT` and copy/paste `localhost:PORT` into your web browser.
-3. If you fork this repo you will need to request an API key.
+
+**3. If you fork this repo you will need to request an API key.**
 > [!WARNING]
 > **You will need [The Cat API](https://thecatapi.com/) to run this app. [Request an API Key here](https://thecatapi.com/#pricing)**<br>
 > _Please ensure you have an API key to see a working app._
   - create a .env file in the root directory
   - Enter code: `REACT_APP_CAT_API_KEY=(your API key here)`
-4. To run Cypress testing
+
+**4. To run Cypress testing**
 - in the console type `npm run cypress`
 - for issues: [Follow these instructions to install Cypress.](https://on.cypress.io/guides/installing-and-running#section-installing)
+
+### Design:
+[Design Board](https://miro.com/app/board/uXjVLf8mZcs=/)
+
+<img width="676" alt="Screenshot 2024-09-23 at 4 18 32 PM" src="https://github.com/user-attachments/assets/efaec161-a9fc-476d-8319-c78059e14c96">
 
 ### Preview of App:
 [//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
