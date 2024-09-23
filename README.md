@@ -22,16 +22,20 @@ Whisker Watch is a charming web application designed for cat breed enthusiasts w
 1. Click the Title to run the app.
 2. Install Cypress
 [Follow these instructions to install Cypress.](https://on.cypress.io/guides/installing-and-running#section-installing)
-> [!WARNING]
-> **[Node.js](https://nodejs.org/en), [npm](https://www.npmjs.com/) & a [locally running API](https://github.com/turingschool-examples/overlook-api) are required to run this app.**<br>
-> _Please ensure you have both installed on your machine before proceeding._
+  > [!WARNING]
+  > **[Node.js](https://nodejs.org/en), [npm](https://www.npmjs.com/) & a [locally running API](https://github.com/turingschool-examples/overlook-api) are required to run this app.**<br>
+  > _Please ensure you have both installed on your machine before proceeding._
 
 3. _(optional) Fork this project to your own Github account._
-- Clone the repository to your local machine.
-- `cd` into the project folder.
-- Use the `npm install` command to install the project dependencies.
-- Use the `npm start` command to run webpack.
-- Check the console for the `PORT` and copy/paste `localhost:PORT` into your web browser.
+  - Clone the repository to your local machine.
+  - `cd` into the project folder.
+  - Use the `npm install` command to install the project dependencies.
+  - Use the `npm start` command to run webpack.
+  - Check the console for the `PORT` and copy/paste `localhost:PORT` into your web browser.
+4. If you fork this repo you will need to request an API key.
+  - you can request the API key for free here: [The Cat API](https://thecatapi.com/#pricing)
+  - create a .env file in the root directory
+  - label it `REACT_APP_CAT_API_KEY=(your API key here)`
 
 ### Preview of App:
 [//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
